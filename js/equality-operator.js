@@ -12,4 +12,4 @@ if(num1 == maybeNum) {
 }
 
 // STRICT EQUALITY -- (===) - matching both date type and value
-// STRICT EQUALITY --  (!==)
+// STRICT EQUALITY
