@@ -2,7 +2,8 @@
 
 let linebreak = '-----------------------------';
 //Exercises
-//For each of the following code blocks, read the code and predict what the result of evaluating it would be, then execute the statement(s) in the Chrome console.
+//For each of the following code blocks, read the code and predict what the result of evaluating it would be, then
+// execute the statement(s) in the Chrome console.
 var a = 1;
 var b = a++;
 var c = ++a;
@@ -140,7 +141,7 @@ console.log(subStringCodeup);
 
 console.log(linebreak);
 //--------------------------------------------------
-/*
+/* EXERCISE #3
 Write some JavaScript code, that is, variables and operators, to describe the following scenarios.
 Do not worry about the real operations to get the values, the goal of these exercises is to understand how real world
 conditions can be represented with code.
@@ -156,7 +157,7 @@ let movie2 = 5;
 let movie3 = 1;
 let moviePrice = 3;
 let totalPrice = moviePrice * (movie1 + movie2 + movie3);
-console.log(`The minimum price that you woud have to pay would be: $${totalPrice}`)
+console.log(`The minimum price that you would have to pay would be: $${totalPrice}`);
 
 console.log(linebreak);
 //----------------------------------------------------
@@ -179,7 +180,6 @@ current schedule.
  */
 let isClassFull = false;
 let isScheduleConflict = false;
-let canEnroll;
 if (isClassFull && isScheduleConflict){
  console.log(`I can't take this class`);
 } else {
@@ -217,14 +217,16 @@ the password must not include the username
 the username must be no more than 20 characters
 neither the username or password can start or end with whitespace
  */
-var username = 'codeup';
+var username = '      codeup      ';
 username = username.toLowerCase();
 username = username.trim();
-var password = 'notastrongpassword';
+var password = '      notastrongpassword         ';
 password = password.toLowerCase();
 password = password.trim();
-let passwordLengthOkay = password.length > 5;
+let passwordLengthOkay = password.length >= 5;
 let passwordIncludeUsername = ( password === password.includes(username) );
-let usernameLengthOkay = username.length < 21;
+let usernameLengthOkay = username.length <= 2;
 let trimmingUAndP = username.trim();
+console.log(username);
+console.log(password);
 
