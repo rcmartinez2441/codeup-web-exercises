@@ -42,3 +42,42 @@ console.log(divisionShorthand);
 let modularShorthand = 9;
 modularShorthand %= 5;
 console.log(modularShorthand);
+
+console.log('----------------------------');
+// Increment and Decrement
+//post-increment - (x++)
+
+// JS Built-In Methods (aka functions);
+//console.log();
+//window.alert();
+//toString();
+
+let num = 5 * 5;
+console.log(num.toString());
+
+console.log('----------------------------');
+
+let pi = 3.1415926535;
+console.log(pi.toFixed(2));
+
+console.log('----------------------------');
+//Number();
+let pseudoNumber = '420';
+console.log(Number(pseudoNumber));
+
+console.log('----------------------------');
+//isNaN(); - Checks to see if the value is Not a number
+let nanTest = 'name'
+console.log(isNaN(pseudoNumber)); // Should come out false
+console.log(isNaN(nanTest)); // should be true
+
+console.log('----------------------------');
+//parseInt();
+let testParseInt = '1234 testing';
+console.log(parseInt(testParseInt)); // Should change number part in string to number data type
+testParseInt = 'testing 1234';
+console.log(parseInt(testParseInt)); // Will get NaN because initial value of string are not numbers
+
+
+console.log('----------------------------');
+//.lenth - it is NOT a function but a property of an object
