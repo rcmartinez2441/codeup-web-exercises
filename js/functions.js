@@ -117,5 +117,7 @@
         }
         let discountMessage = applyDiscount(100,.25);
         alert(discountMessage);
+
+        //Adding this code to push to Github to double check that commits are being accepted to calender
     }
 )()
