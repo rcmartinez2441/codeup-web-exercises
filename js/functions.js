@@ -94,7 +94,7 @@
         let tipPercent = parseFloat(prompt('What percentage would you like to tip? (Please use decimal)')).toFixed(2);
         let billTotal = parseFloat( prompt('How much was the total bill?') ).toFixed(2);
         let totalTipMessage = calculateTip(tipPercent, billTotal);
-        alert(totalTipMessage);
+        alert(totalTipMessage).log;
 
 
         /**
