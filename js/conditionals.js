@@ -18,7 +18,6 @@
      * Test your function by passing various string literals to it and
      * console.logging the function's return value
      */
-    //Decided to use prompt instead of string literal to be a bit more user interactive
     let whatColor = "red";
     let analyzeColor = (color) => {
         if (color === 'red'){
@@ -53,13 +52,13 @@
     let switchAnalyzeColor = (color) => {
         switch (color) {
             case 'red':
-                return `${color}, like Strawberries`;
+                return `${color.toUpperCase()}, like Strawberries`;
                 break;
             case 'blue':
-                return `${color}, like the vast and unexplored oceans`;
+                return `${color.toUpperCase()}, like the vast and unexplored oceans`;
                 break;
             case 'green':
-                return `${color}, like the Microsoft valley wallpaper`;
+                return `${color.toUpperCase()}, like the Microsoft valley wallpaper`;
                 break;
             default:
                 return `I dont know of this color "${color}", sorry about that..`;
@@ -72,8 +71,8 @@
      * user to your `analyzeColor` function. Alert the return value from your
      * function to show it to the user.
      */
-    let userPromptColor = prompt('PLease type a color');
-    alert(analyzeColor(userPromptColor));
+    // let userPromptColor = prompt('Please type a color');
+    // alert(analyzeColor(userPromptColor));
     /* ########################################################################## */
 
     /**
@@ -95,33 +94,35 @@
      * Test your function by passing it various values and checking for the expected
      * return value.
      */
-    let luckyNumber = 4; //A number from 1-5
-    let totalPriceAmount = 100; //Total price of Walmart good being purchased
-    let calculateTotal = (luckyNumber, totalAmount) => {
-        switch (luckyNumber) {
-            case 1:
-                return .90 * totalAmount;
-                break;
-            case 2:
-                return .75 * totalAmount;
-                break;
-            case 3:
-                return .65 * totalAmount;
-                break;
-            case 4:
-                return .5 * totalAmount;
-                break;
-            case 5:
-                alert('WE HAVE A WINNER');
-                return 0 * totalAmount;
-                break;
-            default:
-                return 'Sorry, better luck next time';
-                break;
-        }
-    }
-    let message = calculateTotal(luckyNumber, totalPriceAmount);
-    console.log(`You got lucky number: ${luckyNumber} and your total cost was $${totalPriceAmount}. Congrats! your discount bring you down to $${message}`);
+    // let randomNumber = 4; //A number from 1-5
+    // let totalPriceAmount = 100; //Total price of Walmart good being purchased
+    // let calculateTotal = (luckyNumber, totalAmount) => {
+    //     alert(`Total Amount is: ${totalAmount} \n Random Number Generated: ${luckyNumber}`)
+    //     switch (luckyNumber) {
+    //         case 1:
+    //             return .90 * totalAmount;
+    //             break;
+    //         case 2:
+    //             return .75 * totalAmount;
+    //             break;
+    //         case 3:
+    //             return .65 * totalAmount;
+    //             break;
+    //         case 4:
+    //             return .5 * totalAmount;
+    //             break;
+    //         case 5:
+    //             alert('WE HAVE A WINNER');
+    //             return 0 * totalAmount;
+    //             break;
+    //         default:
+    //             alert('Sorry, better luck next time');
+    //             return totalAmount;
+    //             break;
+    //     }
+    // }
+    // let message = calculateTotal(randomNumber, totalPriceAmount);
+    // alert(`With discount applied, the total comes to $${message}`);
     /**
      * TODO:
      * Uncomment the line below to generate a random number between 0 and 6.
@@ -130,7 +131,10 @@
      * price before the discount was, and what their price after the discount is.
      */
 // Generate a random number between 0 and 6
-    var luckyNumber = Math.floor(Math.random() * 6);
+
+    // var luckyNumber = Math.floor(Math.random() * 6);
+    // let userEnterPrice = prompt('How much was the total charge?');
+    // alert(`Total charge after discount applied is: $${calculateTotal(luckyNumber, userEnterPrice)}`);
 
     /**
      * TODO:
@@ -148,4 +152,41 @@
      * Can you refactor your code to use functions?
      * HINT: The way we prompt for a value could be improved
      */
+    let wantToEnterNumber = () => {
+        let confirmNumber = confirm('Would you like to enter a number?');
+        let userEnterNumber;
+        if (confirmNumber) {
+            userEnterNumber = prompt('Please type a number');
+            return userEnterNumber;
+        } else {
+            alert('Understood, have a good day');
+            return userEnterNumber = null;
+        }
+    }
+    let factsOfNumber = (number) => {
+        if (number === null || isNaN(number) ) {
+            return alert('That is not a number, please refresh and try again');
+        }
+
+        if (number % 2 === 0) {
+            alert(`Your number, ${number}, is:\n Even`);
+        }
+        else {
+            alert(`Your number, ${number}, is:\n Odd`);
+        }
+        //Alert box to state how much user number is plus 100
+        let numberPlus  = parseFloat(number) + 100;
+        alert(`Your number, (${number}), plus 100 equals to:\n ${numberPlus}`)
+
+        //if number is positive or negative
+        if ( number < 0 ) {
+            alert(`Your number is Negative: \n ${number}`);
+        } else if (number > 0 ) {
+            alert(`Your number is Positive: \n ${number}`);
+        } else {
+            alert(`Your number is neither positive or negative`);
+        }
+    }
+    factsOfNumber(wantToEnterNumber());
+
 })();
