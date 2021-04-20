@@ -18,7 +18,6 @@
      * Test your function by passing various string literals to it and
      * console.logging the function's return value
      */
-    let whatColor = "red";
     let analyzeColor = (color) => {
         if (color === 'red'){
             return `${color}, like Strawberries`;
@@ -27,10 +26,10 @@
         } else if (color === 'green'){
             return `${color}, like the Microsoft valley wallpaper`;
         } else {
-            return `I dont know of this color "${color}", sorry about that..`;
+            return `I don't know of this color "${color}", sorry about that..`;
         }
     }
-    console.log( analyzeColor(whatColor) );
+    console.log( analyzeColor('red'.toLowerCase()) );
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -71,8 +70,8 @@
      * user to your `analyzeColor` function. Alert the return value from your
      * function to show it to the user.
      */
-    // let userPromptColor = prompt('Please type a color');
-    // alert(analyzeColor(userPromptColor));
+    let userPromptColor = prompt('Please type a color');
+    alert(analyzeColor(userPromptColor));
     /* ########################################################################## */
 
     /**
@@ -101,24 +100,18 @@
     //     switch (luckyNumber) {
     //         case 1:
     //             return .90 * totalAmount;
-    //             break;
     //         case 2:
     //             return .75 * totalAmount;
-    //             break;
     //         case 3:
     //             return .65 * totalAmount;
-    //             break;
     //         case 4:
     //             return .5 * totalAmount;
-    //             break;
     //         case 5:
     //             alert('WE HAVE A WINNER');
     //             return 0 * totalAmount;
-    //             break;
     //         default:
     //             alert('Sorry, better luck next time');
     //             return totalAmount;
-    //             break;
     //     }
     // }
     // let message = calculateTotal(randomNumber, totalPriceAmount);
@@ -152,6 +145,8 @@
      * Can you refactor your code to use functions?
      * HINT: The way we prompt for a value could be improved
      */
+        //Function to confirm if user would like to enter a number. If put 'okay' user will be prompted and value is
+        //returned. If user does not want to enter number, alert will pop and will return null
     let wantToEnterNumber = () => {
         let confirmNumber = confirm('Would you like to enter a number?');
         let userEnterNumber;
@@ -163,11 +158,13 @@
             return userEnterNumber = null;
         }
     }
+    //Functions takes value of wantToEnterNumber() as argument and if NaN or Null, will return Alert that it's not #
+    //If number = function will run if/else for Odd/Even; Positive/Negative; number + 100.
     let factsOfNumber = (number) => {
-        if (number === null || isNaN(number) ) {
+        if ( number === null || isNaN(number) ) {
             return alert('That is not a number, please refresh and try again');
         }
-
+        //If Statement to find out if number its Odd or Even
         if (number % 2 === 0) {
             alert(`Your number, ${number}, is:\n Even`);
         }
@@ -188,5 +185,8 @@
         }
     }
     factsOfNumber(wantToEnterNumber());
+
+    //Will redo above functions and seperate to individual functions for practicality
+
 
 })();
