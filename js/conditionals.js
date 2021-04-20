@@ -160,33 +160,62 @@
     }
     //Functions takes value of wantToEnterNumber() as argument and if NaN or Null, will return Alert that it's not #
     //If number = function will run if/else for Odd/Even; Positive/Negative; number + 100.
-    let factsOfNumber = (number) => {
-        if ( number === null || isNaN(number) ) {
-            return alert('That is not a number, please refresh and try again');
-        }
-        //If Statement to find out if number its Odd or Even
-        if (number % 2 === 0) {
-            alert(`Your number, ${number}, is:\n Even`);
-        }
-        else {
-            alert(`Your number, ${number}, is:\n Odd`);
-        }
-        //Alert box to state how much user number is plus 100
-        let numberPlus  = parseFloat(number) + 100;
-        alert(`Your number, (${number}), plus 100 equals to:\n ${numberPlus}`)
+    // let factsOfNumber = (number) => {
+    //     if ( number === null || isNaN(number) ) {
+    //         return alert('That is not a number, please refresh and try again');
+    //     }
+    //     //If Statement to find out if number its Odd or Even
+    //     if (number % 2 === 0) {
+    //         alert(`Your number, ${number}, is:\n Even`);
+    //     }
+    //     else {
+    //         alert(`Your number, ${number}, is:\n Odd`);
+    //     }
+    //     //Alert box to state how much user number is plus 100
+    //     let numberPlus  = parseFloat(number) + 100;
+    //     alert(`Your number, (${number}), plus 100 equals to:\n ${numberPlus}`)
+    //
+    //     //if number is positive or negative
+    //     if ( number < 0 ) {
+    //         alert(`Your number is Negative: \n ${number}`);
+    //     } else if (number > 0 ) {
+    //         alert(`Your number is Positive: \n ${number}`);
+    //     } else {
+    //         alert(`Your number is neither positive or negative`);
+    //     }
+    // }
 
-        //if number is positive or negative
-        if ( number < 0 ) {
-            alert(`Your number is Negative: \n ${number}`);
-        } else if (number > 0 ) {
-            alert(`Your number is Positive: \n ${number}`);
+    //Re-did functions seperately for each test for more usability
+    let factsOfNumber = (number) => {
+        if( isNaN(number) || number === null){
+            alert('That\'s not a number, please refresh and try again');
         } else {
-            alert(`Your number is neither positive or negative`);
+            isOddOrEven(number);
+            isPosOrNeg(number);
+            add100(number);
+        }
+
+    }
+    let isOddOrEven = (number) => {
+        if(number % 2 === 0) {
+            return alert(`You number (${number}) is Even`);
+        } else {
+            return alert(`You number (${number}) is Odd`);
         }
     }
+    let isPosOrNeg = (number) => {
+        if (number > 0) {
+            return alert(`You number (${number}) is Positive`);
+        } else if (number < 0) {
+            return alert(`You number (${number}) is Negative`);
+        } else {
+            return alert(`You number is neither postive or negative`);
+        }
+    }
+    let add100 = (number) => {
+        return alert(`Your number (${number}) plus 100 is ${parseFloat(number) + 100}`);
+    }
     factsOfNumber(wantToEnterNumber());
-
-    //Will redo above functions and seperate to individual functions for practicality
 
 
 })();
