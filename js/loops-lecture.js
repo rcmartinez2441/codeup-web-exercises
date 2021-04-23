@@ -107,9 +107,108 @@
 // numberOfParking();
 
 
-
-
+// 04/23/21 - Continuing with Loops
 //------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------
 
 // //For Loops
+//Syntax:
+/*
+for ([startin point]; [stopping point]; [iteration condition]) {
+	[Code to Be Executed]
+}
+
+for (let i = 0; i <10; i++) {
+
+}
+ */
+
+//Class Example
+// Egg Carton. How many egg cartions can you fill? Start at Zero eggs and iterate by 1. 72 Eggs Total
+//We filled X amount of egg cartons
+
+// let howManyEggCartons = () => {
+// 	let cartons = 0;
+// 	for (let eggs = 0; eggs <= 72; eggs++) {
+// 		console.log('Number of Eggs: ' + eggs);
+// 		if (eggs % 12 === 0) {
+// 			cartons++;
+// 			console.log(`Number of Egg Cartons Filled: ${cartons}`);
+// 		}
+// 	}
+// }
+// howManyEggCartons();
+
+//USING 'BREAK' AND 'CONTINUE'
+
+// BREAK
+//break helps avoid infinite loops
+// break leaves a switch statememtn if it meets a certain condition
+
+// let eggUsingBreak = () => {
+// 	for(let i = 0; i <=30; i++) {
+// 		console.log(i);
+// 		if(i === 17){
+// 			console.log('you hit the hated number');
+// 			break;
+// 		}
+// 	}
+// }
+// eggUsingBreak();
+
+//CONTINUE - Will skip the current iteration if certain conditions are met but continue the loop on for the next iteration
+
+//THis fucntion continues to the next iteration if 'i' is not divisable by 2 evenly. Will log I if 'i' is an even number
+
+// eggUsingContinue = () => {
+// 	for (let i = 0; i <= 10; i++){
+// 		if (i % 2 !== 0) {
+// 			continue;
+// 		} else {
+// 			console.log(i);
+// 		}
+// 	}
+// }
+// eggUsingContinue();
+
+
+//NESTED FOR LOOP
+// write a (nested) for loop that counts 1-5 and then 5 to 1;
+
+// const nestedLoop2 = (counter) => {
+// 	for(let i = counter; i > 0; counter--){
+// 		console.log(`This is my second loop ${counter}`);
+// 	}
+// }
+//
+// const nestedLoop1 = () => {
+//
+// 	for (let counter = 1; counter <= 5; counter++){
+// 		console.log(`First loop log: ${counter}`);
+// 		if (counter === 5){
+// 			nestedLoop2(counter);
+// 		}
+// 	}
+// }
+// nestedLoop1();
+
+// TODO: Loop through a set of numbers (0-30), if the number you're currently at is even, add 2 to it. If it's an
+//  odd number, print "odd"
+// // HINT: remember the remainder operator (modulo)
+
+const setOfNumbers = () => {
+	for (let i = 0; i <= 30; i++){
+		if ( i % 2 ===0 ){
+			console.log(i + 2);
+		} else {
+			console.log("odd");
+		}
+	}
+}
+
+// // TODO: loop through numbers 1 - 40. Print "marco" if it's divisible by 3. Print "polo" if it's divisible by 5.
+//  If it's neither print "I'm not playing"
+//  Print "marco polo" if it's divisible by 3 and 5.
+
+
+
