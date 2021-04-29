@@ -121,15 +121,29 @@
 				firstName: 'Neil deGrasse',
 				lastName: `Tyson`
 			}
+		},
+		{
+			bookTitle: `The Story of that One Guy`,
+			author: {
+				firstName: 'Big',
+				lastName: 'Chungus'
+			}
+		},
+		{
+			bookTitle: `Are you a Gamer`,
+			author: {
+				firstName: `A Real`,
+				lastName: `Gamer`
+			}
 		}
+
 	]
 	books.forEach(function (element){
-		console.log(`Book:\n${element.bookTitle}`);
-		console.log(`Author:\n${element.author.firstName}`);
-		console.log(element.author.lastName);
+		console.log(`Book: #${books.indexOf(element) +1}\nTitle: ${element.bookTitle}\nAuthor: ${element.author.firstName} ${element.author.lastName}`);
 		lineBreak();
 	});
 	lineBreak();
+
 //-------------------------------------------------------------------------------
 	/**
 	 * TODO:
@@ -155,6 +169,7 @@
 	 *      ---
 	 *      ...
 	 */
+//Did it in Line 141 Lol
 	lineBreak();
 //-------------------------------------------------------------------------------
 	/**
@@ -167,8 +182,31 @@
 	 *   outputs the information described above. Refactor your loop to use your
 	 *   `showBookInfo` function.
 	 */
+	let booksVer2 = [];
+	let createBook = (bookTitle, author) => {
+		booksVer2.push({
+			book: {
+				title: bookTitle,
+				author: author,
+			}
+		})
+		return booksVer2;
+	}
+	console.log( createBook(`Testing Book`, `Testing Author`) );
 
+	createBook('Book2', `Author2`);
+	lineBreak();
 
+	let showBookInfo = (array) => {
+		array.forEach(function (element, index){
+			console.log(`Book #${index +1}`);
+			console.log(`Title: ${element.book.title}`);
+			console.log(`Author: ${element.author}`);
+			lineBreak();
+
+		})
+	}
+	showBookInfo(booksVer2);
 
 
 
