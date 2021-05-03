@@ -71,8 +71,5 @@
     console.log(trim('      test      '));
     lineBreak();
 
-    let testingCode = () =>{
-        return `Why is my autofill stop working`;
-    }
 
 })();
