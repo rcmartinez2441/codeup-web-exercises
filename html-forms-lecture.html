@@ -1,0 +1,54 @@
+<!-- ============================================================== -->
+    <!-- *** HTML FORMS *** -->
+    <!-- Talking About User Interaction -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Forms Lecture</title>
+    </head>
+    <body>
+        <!-- Form needs what kind of command (POST/GET) and where are you sending it (action="")-->
+<!--        <form method="POST" action="https://request-inspector.glitch.me">-->
+<!--            &lt;!&ndash; Type is the one attribute that the input element needs to decide how it looks &ndash;&gt;-->
+<!--            <input id="username" name="username" type="text" placeholder="Enter Username">-->
+<!--            &lt;!&ndash; Can use input or button to add some kind of button to submit &ndash;&gt;-->
+<!--            <input type="submit" value="Input Element">-->
+<!--            <button> Button Element </button>-->
+        <!--            THis is what you get when you submit -->
+        <!--     {"method":"POST","query":{},"body":{"user":"test"}}       -->
+<!--        </form>-->
+
+<!--        <form method="get" action="https://request-inspector.glitch.me">-->
+<!--            <input id="username" name="user" type="text" placeholder="Enter Username">-->
+<!--            <br>-->
+<!--            <button>Submit to Doge</button>-->
+<!--            THis is what you get when you submit &ndash;&gt;-->
+<!--            {"method":"GET","query":{"user":"test"},"body":{}}       &ndash;&gt;-->
+<!--        </form>-->
+        <!-- Using different type attributes -->
+        <form method="POST" action="https://request-inspector.glitch.me">
+            <input id="email-input" name="email" type="email" placeholder="email" required>
+            <br>
+            <input id="password-input" name="password" type="password" placeholder="enter password" required>
+            <br>
+            <!-- Using Radio Type -->
+            <input id="role-student" name="role" type="radio" value="student">
+            <label for="role-student">Student</label>
+            <input id="role-instructor" name="role" type="radio" value="instructor">
+            <label for="role-instructor">Instructor</label>
+            <br>
+
+            <!-- CheckBox Attribute -->
+            <!-- If checked, the value is going to be 1 -->
+            <input id="isActive" name="isActive" type="checkbox" value="1">
+            <label for="isActive">Is Active</label>
+
+            <!-- Select Element for Dropdowns -->
+            <select name="" id=""></select>
+            <!-- Submit Button -->
+            <button>Login</button>
+            <!-- JSON (JS Object Notation) - Form data becomes Json and is sent to endpoint. When it reaches that endpoint -->
+        </form>
+    </body>
+</html>
