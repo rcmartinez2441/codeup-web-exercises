@@ -1,7 +1,22 @@
 (function (){
 	'use strict';
 	/*
+// ==== 05/04/21 ====
+Write a function named cube(n) that returns n * n * n
+Write a function named cubeRoot(n) that returns the cube root of the input
+*/
+	let cube = (number = 4) => {
+		//console.log(Math.pow(number,3));
+		return Math.pow(number,3);
+	}
+	cube();
 
+	let cubeRoot = (cube) => {
+		console.log(cube);
+		return Math.cbrt(cube);
+	}
+	console.log(cubeRoot(cube()));
+/*
 # **Function Drills**
 Functions using conditionals but not loops or arrays:
 - Make a function named `isOdd(number)`
