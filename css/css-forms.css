@@ -1,0 +1,20 @@
+/*
+TODO: Open forms.html from yesterday. Using the CSS properties discussed (border, padding and margin) center the form in the center of the webpage. Add borders around each section. Add margin or padding to separate each input. This is an opportunity to play around with these properties and improve your form.
+ */
+body {
+    background-color: beige;
+}
+form {
+    text-align: center;
+}
+
+#input-portion, #radio-portion, #dropdown {
+    text-align: center;
+    border: black 10px solid;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+

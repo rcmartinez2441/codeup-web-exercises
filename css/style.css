@@ -1,20 +1,56 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif;
+}
+header {
+
+}
+h1.fancy-header {
+    border: 1px solid black;
+    background-image: url("../img/glasses-dog.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
+    height: 7em;
+    opacity: 85%;
+    padding: 1em;
+    -webkit-text-stroke: .025em white;
+
+}
+
+span.fancy-header {
+    max-height: auto;
+    margin:auto;
+    font-weight: bolder;
+    font-size: 4.2em;
+    color: darkturquoise;
+}
+
 body {
-    background-color: lightskyblue;
+    background-color: white;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+}
+#slogan span {
+    font-size: 2.5em;
 }
 ul, ol, table{
     list-style-position: inside;
     display: inline-block;
     text-align: left;
+    font-size: 20px;
+    margin: 1px;
+    border: black 1px solid;
 }
 
 /* This Shows that #core-value element is block level */
 #core-values {
     border: 1px solid crimson;
 }
-h1 {
-    color: darkmagenta;
+h2 {
+    border: black 5px solid;
+    border-radius: 10px;
 }
 #core-values li {
     color: darkblue;
