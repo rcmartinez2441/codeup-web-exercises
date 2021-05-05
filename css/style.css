@@ -16,7 +16,11 @@ h1.fancy-header {
     height: 7em;
     opacity: 85%;
     padding: 1em;
-    -webkit-text-stroke: .025em white;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
 
 }
 
