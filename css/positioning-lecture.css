@@ -1,0 +1,112 @@
+body {
+    margin      : 10px auto;
+    font-family : Calibri, sans-serif;
+    background: #f8d4b2;
+    border: black;
+}
+
+/*
+TODO: notice in the html that we have
+    those nice anchor tags?
+    ->What good are they if we have to
+    scroll up to use them?
+    -> ENTER -> position: fixed
+*/
+header {
+    background-color : coral;
+    padding          : 3%;
+    position         : fixed;
+    width        : 100%;
+    height: 5%;
+    border-radius: 10px;
+    z-index: 1;
+    border: solid;
+    box-sizing: border-box;
+    top: 0px;
+
+
+}
+
+#nav-anchor-container {
+    margin     : 0 auto;
+    list-style : none;
+    padding    : 0;
+    width: 100%;
+    position: relative;
+    bottom: 10px;
+
+
+}
+
+#nav-anchor-container li {
+    display : inline;
+    padding : 1%;
+    font-size: 1.5em;
+    border: #0fb784 solid;
+    margin: auto;
+    position: relative;
+    top: -4px;
+    border-radius: 10px;
+    background: #0fb784;
+    text-decoration: none;
+}
+
+/*
+    TODO: Now, we have an issue with the
+        content of the blog being hidden
+        by the fixed position of the header
+        -> We could use padding to fix that,
+        -> But that's not a great use of the padding
+        property
+        -> Let's try to use a different property
+        -> position: relative/absolute
+*/
+main {
+    position : relative;
+    height: 500px;
+    margin-top: 30px;
+}
+
+#blog-content-container {
+    position : absolute;
+    top      : 15%;
+}
+
+#blog-title {
+    padding-left : 2%;
+}
+li>a {
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+#start-button {
+    position: absolute;
+    left: 70%;
+}
+#end-button {
+    position: absolute;
+    left: 70%;
+}
+
+.paragraph-container p {
+    padding : 2%;
+    margin  : 0;
+}
+
+/*
+    TODO: Now, I've created my blog!
+        -> Still a problem is the fact that my content
+        is seen behind the header/nav when scrolling down
+        -> You're job is to identify why
+            -> Does something need to be added?
+            -> Is my use of positioning correct?
+            -> Can some other style be changed?
+*/

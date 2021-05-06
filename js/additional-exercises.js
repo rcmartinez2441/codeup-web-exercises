@@ -31,28 +31,28 @@ Write a function named cubeRoot(n) that returns the cube root of the input
 	// If either of the arguments are not a numeric string or number, return a string message indicating which argument is not a number/numeric string
 	 */
 	//Helper function to decide is arguments are numbers
-	let isNumber = (number, divisor) => {
-		if( ( isNaN(number) && isNaN(divisor) ) || (typeof number === 'boolean' && typeof divisor === 'boolean' )) {
-			console.log(`They are not a Numbers`);
-			return false
-		}else if(isNaN(number) || (typeof number === 'boolean')){
-			console.log(`${number} is not a Number`);
-			return false
-		} else if (isNaN(divisor) || typeof divisor === 'boolean'){
-			console.log(`${number} is not a Number`);
-			return false;
-		} else {
-			return true;
-		}
-	}
-	//Function that divides arguments
-	let remainder = (number, divisor) => {
-		if (isNumber(number, divisor)) {
-			return `${number} divided by ${divisor} = ${number / divisor}`;
-		}
-		return false;
-	}
-	console.log(remainder(3,5 ))
+	// let isNumber = (number, divisor) => {
+	// 	if( ( isNaN(number) && isNaN(divisor) ) || (typeof number === 'boolean' && typeof divisor === 'boolean' )) {
+	// 		console.log(`They are not a Numbers`);
+	// 		return false
+	// 	}else if(isNaN(number) || (typeof number === 'boolean')){
+	// 		console.log(`${number} is not a Number`);
+	// 		return false
+	// 	} else if (isNaN(divisor) || typeof divisor === 'boolean'){
+	// 		console.log(`${number} is not a Number`);
+	// 		return false;
+	// 	} else {
+	// 		return true;
+	// 	}
+	// }
+	// //Function that divides arguments
+	// let remainder = (number, divisor) => {
+	// 	if (isNumber(number, divisor)) {
+	// 		return `${number} divided by ${divisor} = ${number / divisor}`;
+	// 	}
+	// 	return false;
+	// }
+	// console.log(remainder(3,5 ))
 //==========================================================================================
 	/*
 	# **Function Drills**
