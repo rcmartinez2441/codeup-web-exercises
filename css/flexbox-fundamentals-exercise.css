@@ -39,6 +39,9 @@ h2, h3 {
     padding: 1em;
     margin: 0 auto;
     /* enter needed declarations here */
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
 }
 
 section {
@@ -132,6 +135,9 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .grey-box {

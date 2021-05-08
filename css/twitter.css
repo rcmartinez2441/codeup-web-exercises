@@ -35,6 +35,7 @@ ul {
 a {
     color: var(--link-color);
 }
+
 .top-nav {
     background: var(--light-bg);
     position: fixed;
@@ -54,6 +55,7 @@ a {
     color: var(--main-link-color);
     font-weight: bold;
     text-decoration: none;
+    align-self: center;
 }
 .nav-link:hover {
     color: var(--link-color);
@@ -66,7 +68,6 @@ a {
     justify-content: space-between;
     height:6em;
     z-index: 0;
-    border: solid;
 }
 .profile-header {
 }
@@ -76,7 +77,6 @@ a {
 }
 .profile-form {
     z-index: 0;
-    border: solid;
     margin-right: 1em;
 }
 .btn {
@@ -98,21 +98,15 @@ a {
 .container {
     display: flex;
     flex-flow: row;
-    border:solid;
     justify-content: space-evenly;
 }
 .profile-details {
-    border: black 1px solid;
-    margin:1em;
+    margin:2em;
     align-self: flex-start;
-
-
 }
 .timeline {
     display: flex;
     flex-flow: column;
-    border: black 3px solid;
-    background-color: white;
     align-self: flex-start;
     justify-content: space-evenly;
     margin:1em;
@@ -120,47 +114,74 @@ a {
 }
 .media {
     display:flex;
-    margin:0;
+    flex-flow: row wrap;
+    margin:1px;
+}
+
+.timeline .media {
+    background-color: white;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: center;
+    padding: 1em;
+    border: #3B94D9 solid .5px;
+    margin: 1px;
+    border-radius: 5px;
+}
+.who-to-follow {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    margin: 1em;
+    height: auto;
 }
 
 .who-to-follow .media {
-    border: black solid;
-    max-height: 12em;
+    border: #3B94D9 solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    min-height: 12em;
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: .5em;
+    padding: 1em;
+    max-width: 100%;
 }
 .media-body {
     display: flex;
     flex-flow: column wrap;
-
-
+    align-self: flex-start;
+    margin: .5em;
 }
 h3 {
-    border: dotted;
+    font-size: 1.35em;
     margin-top: 0;
     margin-bottom: 0;
-
+    align-self: center;
+}
+ small {
+    align-self: center;
 }
 .timeline .media-image {
-    border: dotted;
-    min-width: 10%;
-    max-height: 3em;
+    align-self: center;
+    margin-right: 1em;
 }
 .who-to-follow .media-image {
+    align-self: center;
     width: 40%;
     height: auto;
+    order: -1
 }
 
-.who-to-follow {
-    background-color: white;
-    /*border: black 3px solid;*/
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: stretch;
-    align-items: stretch;
-    margin: 1em;
-    width: 20em;
-    height: auto;
+.who-to-follow .btn {
+    margin: .5em;
+    background-color: #3B94D9;
+    color: white;
 }
 .text-right {
     text-align: right;
