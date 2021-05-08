@@ -133,10 +133,11 @@ a {
 .who-to-follow {
     display: flex;
     flex-flow: column wrap;
-    justify-content: stretch;
-    align-items: flex-start;
+    justify-content: space-evenly;
+    align-items: stretch;
     margin: 1em;
     height: auto;
+    width: 15em;
 }
 
 .who-to-follow .media {
@@ -145,12 +146,12 @@ a {
     background-color: white;
     min-height: 12em;
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: space-evenly;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-around;
     margin: .5em;
     padding: 1em;
-    max-width: 100%;
+    min-width: auto;
 }
 .media-body {
     display: flex;
