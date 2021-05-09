@@ -5,11 +5,18 @@
     font-family: 'Catamaran', sans-serif;
 }
 header {
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
 
+}
+body {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 }
 h1.fancy-header {
     border: 1px solid black;
@@ -18,7 +25,7 @@ h1.fancy-header {
     background-size: cover;
     background-position: center 30%;
     width: 100%;
-    height: 7em;
+    height: 100%;
     opacity: 85%;
     padding: 1em;
     text-shadow:
@@ -32,10 +39,105 @@ h1.fancy-header {
     align-items: center;
 }
 
+/*This changes font in header*/
 span.fancy-header {
-    font-size: 40px;
-
+    max-width: 100%;
+    font-size: 4em;
+    color: #77f0dd;
+}
+/*Editing Slogan*/
+#slogan {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    border: black solid;
+    border-radius: 10px;
+    background-color: #77f0dd;
+    font-size: 2.5em;
+}
+strong {
+    text-decoration: underline;
 }
 
+/*Core Values*/
+#core-values {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#core-values h2 {
+    font-size: 2em;
+    background-color: #57e8f0;
+    width: 100%;
+    border: black solid;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+ul {
+    width: 100%;
+    margin: 0;
+    padding-right: 2em;
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+#core-values li {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    border: black solid;
+    border-radius: 10px;
+    font-size: 1.5em;
+    margin-top: 3px;
+    background-color: #3B94D9;
+    color: #77f0dd;
+}
+
+/*Our Process Section*/
+#our-process {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#our-process h2 {
+    font-size: 2em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #f0a48b;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+ol{
+    width: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    font-size: 2em;
+}
+#our-process li {
+    margin-top: 5px;
+    width: 100%;
+    border: double #f07558;
+    border-radius: 10px;
+    background-color: #77f0dd;
+}
 
 
