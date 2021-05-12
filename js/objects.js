@@ -15,7 +15,7 @@
 	 *  > console.log(person.lastName) // "Sanchez"
 	 */
 	let person = {
-		firstName: 'Raul',
+		'firstName': 'Raul',
 		lastName: 'Martinez'
 	}
 	console.log(person.firstName);

@@ -62,18 +62,132 @@
 	// onlyEvenNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]);
 
 //Exercise #69
-	let onlyPositiveNumbers = (array) => {
-		for (let i = 0; i < array.length; i++) {
-			if (array[i] > 0){
-				continue;
-			} else {
-				array.splice(i,1);
-				i = -1;
+// 	let onlyPositiveNumbers = (array) => {
+// 		for (let i = 0; i < array.length; i++) {
+// 			if (array[i] > 0){
+// 				continue;
+// 			} else {
+// 				array.splice(i,1);
+// 				i = -1;
+// 			}
+// 		}
+// 		return array;
+// 	}
+//
+// onlyPositiveNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]);
+
+//	Exercise 94
+// 	const books = [
+// 		{
+// 			"title": "Genetic Algorithms and Machine Learning for Programmers",
+// 			"price": 36.99,
+// 			"author": "Frances Buontempo"
+// 		},
+// 		{
+// 			"title": "The Visual Display of Quantitative Information",
+// 			"price": 38.00,
+// 			"author": "Edward Tufte"
+// 		},
+// 		{
+// 			"title": "Practical Object-Oriented Design",
+// 			"author": "Sandi Metz",
+// 			"price": 30.47
+// 		},
+// 		{
+// 			"title": "Weapons of Math Destruction",
+// 			"author": "Cathy O'Neil",
+// 			"price": 17.44
+// 		}
+// 	]
+// 	let highestPriceBook = (array) => {
+// 		let newArray = array.sort( (a,b) => {
+// 			return a.price - b.price;
+// 		});
+// 		return newArray[newArray.length-1];
+// 	}
+// 	console.log(highestPriceBook(books));
+//
+// 	highestPriceBook(books);
+
+//====================================================================
+	//Exercise 97
+	const shoppingCart = {
+		"tax": .08,
+		"items": [
+			{
+				"title": "orange juice",
+				"price": 3.99,
+				"quantity": 1
+			},
+			{
+				"title": "rice",
+				"price": 1.99,
+				"quantity": 3
+			},
+			{
+				"title": "beans",
+				"price": 0.99,
+				"quantity": 3
+			},
+			{
+				"title": "chili sauce",
+				"price": 2.99,
+				"quantity": 1
+			},
+			{
+				"title": "chocolate",
+				"price": 0.75,
+				"quantity": 9
 			}
-		}
-		return array;
+		]
+	}
+	const numberOfItemTypes = (object) => {
+		let arrayCounter = [];
+		object.items.forEach( (itemsArray) => {
+			if(!arrayCounter.includes(itemsArray)){
+				arrayCounter.push(itemsArray);
+			}
+		});
+		return arrayCounter.length;
+	}
+	console.log(numberOfItemTypes(shoppingCart));
+
+	const totalNumberOfItems = (array) => {
+		let total = 0;
+		array.items.forEach( (element) => {
+			total += element.quantity;
+		});
+		return total;
 	}
 
-onlyPositiveNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]);
+	const getAverageItemPrice = (object) => {
+		console.log(object.items.length);
+		return totalNumberOfItems(object) / object.items.length;
+	}
+	console.log(getAverageItemPrice(shoppingCart));
 
+	//Exercise 100
+	const getAverageSpentPerItem = (object) => {
+		let total = 0;
+		object.items.forEach (element => {
+			total += (element.price * element.quantity);
+		});
+		return total / totalNumberOfItems(object);
+	}
+	console.log(getAverageSpentPerItem(shoppingCart));
+
+	// Exercise 101
+// Write a function named mostSpentOnItem that takes in the shopping cart as input and returns the object associated with the item that has the highest price*quantity.
+// Be sure to do this as programmatically as possible.
+// Hint: Similarly to how we sometimes begin a function with setting a variable to zero, we need a starting place:
+// Hint: Consider creating a variable that is a object with the keys "price" and "quantity" both set to 0. You can then compare each item's price and quantity total to the one from "most"
+
+	const mostSpentOnItem = (object) => {
+		let totalPriceArray = [];
+		object.items.forEach (element => {
+			totalPrice.
+		});
+	}
+
+	console.log(mostSpentOnItem(shoppingCart));
 })();
