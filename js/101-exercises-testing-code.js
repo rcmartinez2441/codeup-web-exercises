@@ -183,10 +183,18 @@
 // Hint: Consider creating a variable that is a object with the keys "price" and "quantity" both set to 0. You can then compare each item's price and quantity total to the one from "most"
 
 	const mostSpentOnItem = (object) => {
-		let totalPriceArray = [];
+		let highestTotalCost = 0;
+		let elementTotalCost;
+		let itemObject = [];
 		object.items.forEach (element => {
-			totalPrice.
+			elementTotalCost = (element.price * element.quantity);
+			if (elementTotalCost > highestTotalCost){
+				highestTotalCost = elementTotalCost;
+				itemObject = element;
+			} else {
+			}
 		});
+		return itemObject;
 	}
 
 	console.log(mostSpentOnItem(shoppingCart));
