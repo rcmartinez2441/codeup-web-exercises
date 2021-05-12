@@ -13,7 +13,6 @@ body {
 }
 @media screen and (min-width: 200px) {
     body {
-        width: 100vw;
         display: flex;
         flex-flow: column wrap;
     }
@@ -64,6 +63,29 @@ body {
         height: 4em;
         padding: 5px;
         margin:7px 1px 7px 0;
+    }
+/*    Header Section */
+    header {
+        width: 100%;
+        border: solid;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        align-content: center;
+        background-image: url("../img/glasses-dog.jpeg");
+        background-size:cover;
+        background-repeat: no-repeat;
+
+    }
+    h1 {
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    button {
+        width: 10em;
+        max-width: 50%;
+        margin-bottom: 2em;
     }
 }
 /*Desktop Query*/
