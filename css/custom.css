@@ -1,4 +1,18 @@
-h1 {
+.jumbotron {
     background-image: url("../assets/pizza.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 7em;
+    padding: 4rem 0;
+}
+h1 {
+    width:100%;
+    background-color: rgba(242, 242, 242, .5);
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+}
 
+li {
+    margin-right: .5em;
 }
