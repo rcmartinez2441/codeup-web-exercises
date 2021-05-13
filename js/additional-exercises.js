@@ -5,27 +5,48 @@
 Write a function named cube(n) that returns n * n * n
 Write a function named cubeRoot(n) that returns the cube root of the input
 */
-	let cube = (number = 4) => {
-		//console.log(Math.pow(number,3));
-		return Math.pow(number, 3);
-	}
-	cube();
-
-	let cubeRoot = (cube) => {
-		console.log(cube);
-		return Math.cbrt(cube);
-	}
-	console.log(cubeRoot(cube()));
+	// let cube = (number = 4) => {
+	// 	//console.log(Math.pow(number,3));
+	// 	return Math.pow(number, 3);
+	// }
+	// cube();
+	//
+	// let cubeRoot = (cube) => {
+	// 	console.log(cube);
+	// 	return Math.cbrt(cube);
+	// }
+	// console.log(cubeRoot(cube()));
 //==========================================================================================
 // Write a function called last(input) that returns the last character of a string
-	let last = (input) => {
-		return input
-			.split('')
-			.pop()
-			.slice();
-	}
-	console.log(last('string'));
+// 	let last = (input) => {
+// 		return input
+// 			.split('')
+// 			.pop()
+// 			.slice();
+// 	}
+// 	console.log(last('string'));
 //==========================================================================================
+	//Write a JavaScript program to construct the following pattern, using a nested for loop.
+	// 	*
+	// 	* *
+	// 	* * *
+	// 	* * * *
+	// 	* * * * *
+
+	const starPyramid = () => {
+		let starPattern = '* '
+		let patternAdder = `* \n`
+		for (let i = 1; i < 5; i++){
+			starPattern += '* ';
+			patternAdder += starPattern + `\n`;
+		}
+		return patternAdder;
+	}
+	console.log(starPyramid());
+	// hope - blood orange
+
+
+//========================================================================================
 	/*
 	//Write a remainder(number, divisor) function that returns the remainder left over when dividing number by the divisor
 	// If either of the arguments are not a numeric string or number, return a string message indicating which argument is not a number/numeric string
