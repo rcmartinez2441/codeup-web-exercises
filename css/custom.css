@@ -10,9 +10,25 @@ h1 {
     width:100%;
     background-color: rgba(242, 242, 242, .5);
     font-weight: bold;
-    text-shadow: 1px 1px black;
+    color: #efef2e;
+    text-shadow: 2px 4px red;
 }
-
 li {
     margin-right: .5em;
+}
+.bi-list {
+    color: white;
+}
+a {
+    align-self: flex-start;
+}
+
+section {
+
+}
+h2.font-size {
+    font-size: 1em;
+}
+.nav-tabs li {
+    border: black;
 }

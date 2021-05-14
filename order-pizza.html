@@ -6,36 +6,227 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="css/custom.css">
         <title>Order Pizza</title>
     </head>
     <body>
-        <nav class=" container-fluid flex-row justify-content-between navbar navbar-expand-lg bg-light text-dark">
-            <button class="navbar-toggler bg-dark text d-flex d-lg-none d-md-flex" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="navbar-toggler-icon"></span>
-
+<!--        Nav Bar        -->
+        <nav class="container-fluid justify-content-between navbar navbar-expand-lg bg-light text-dark position-sticky">
+            <button class="align-self-start navbar-toggler bg-dark d-flex d-lg-none d-md-none" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="flex-row justify-content-between navbar-nav d-none d-md-flex">
+            <div class="collapse navbar-collapse flex-row d-md-flex justify-content-between navbar-nav flex-fill" id="navbarToggler">
+                <ul class="flex-xs-column flex-md-row justify-content-between navbar-nav">
                     <li class="nav-item active"><a class="nav-link" href="#">Pizza World</a></li>
                     <li class="nav-item active"><a class="nav-link" href="#">Order Online</a></li>
                     <li class="nav-item active"><a class="nav-link" href="#">Menu</a></li>
                     <li class="nav-item active flex-grow-1">
-                        <form class="form-inline my-2 my-lg-0">
+                        <form class="flex-fill form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Near You!</button>
                         </form>
                     </li>
                 </ul>
             </div>
-            <a href="#"><img src="assets/icons8-person-24.png" alt="signup-icon">Sign Up</a>
+            <a href="#" class="flex-grow-3"><img src="assets/icons8-person-24.png" alt="signup-icon">Sign Up</a>
         </nav>
-        <div id="welcome-sign" class= "align-items-center text-center jumbotron d-flex">
-            <h1><span>Welcome to Pizza World</span></h1>
+<!--        Welcome Jumbotron-->
+        <div id="welcome-sign" class= "align-items-center text-center jumbotron d-flex mt-auto">
+            <h1><span>Welcome to Pizza Planet</span></h1>
         </div>
+<!--        Nav-Tab Section-->
+        <section class="container">
+            <h1 class="text-center bg-transparent mb-3">BUILD YOUR OWN PIZZA</h1>
+<!--            The Actual Nav Tabs with Tab Name and Number-->
+            <ul class="nav nav-tabs" data-toggle="tab" role="tablist">
+                <li class="nav-item col">
+                    <a class="nav-link text-center" data-toggle="tab" href="#size" role="tab" aria-controls="home" aria-selected="true">
+                        <h2 class="font-size">
+                            <span class="badge badge-secondary rounded-circle">1</span>
+                            Size and Crust
+                        </h2>
+                    </a>
+                </li>
+                <li class="nav-item col">
+                    <a class="nav-link text-center" data-toggle="tab" href="#sauce" role="tab" aria-controls="home" aria-selected="true">
+                        <h2 class="font-size">
+                            <span class="badge badge-secondary rounded-circle">2</span>
+                            Cheese and Sauce
+                        </h2>
+                    </a>
+                </li>
+                <li class="nav-item col">
+                    <a class="nav-link text-center" data-toggle="tab" href="#toppings" role="tab" aria-controls="home" aria-selected="true">
+                        <h2 class="font-size">
+                            <span class="badge badge-secondary rounded-circle">3</span>
+                            Toppings
+                        </h2>
+                    </a>
+                </li>
+            </ul>
+<!--            Content inside each main tab-->
+            <div class="tab-content" id="myTabContent">
+<!--                Div contains the selections for pizza crust and size-->
+                <div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="size-crust-tab">
+<!--                    Main Card for Tab 1 will contain to child cards to regular crust and thin crust-->
+                        <div class="card mb-4">
+                            <div class="card-header bg-primary text-white">Choose Size and Crust</div>
+<!--                            Card Body for Chose Size and Crust-->
+                            <div class="card-body">
+<!--                                First Mini Card - Hand Tossed - DONE-->
+                                <!-----DIV FOR HAND TOSSED------>
+                                <div class="card mb-3">
+                                    <div class="card-header">Hand Tossed</div>
+<!--                                    First Mini Card Body. Only Contains text-->
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            Garlic seasoned crust with a rich, buttery taste
+                                        </div>
+                                    </div>
+<!--                                    Radio Button for first Selection Size of Pizza-->
+                                    <ul class="list-group border list-group-flush">
+                                        <li class="list-group-item">
+                                            <input type="radio" aria-label="Radio button for Size 1" name="pizza-size"> Small (10")
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="radio" aria-label="Radio button for Size 2" name="pizza-size"> Medium (12")
+                                        </li>
+                                    </ul>
+                                </div>
+<!--                                Second Mini Card - Thin Crust-->
+                                <div class="card">
+                                    <div class="card-header">Hand Tossed</div>
+<!--                                    Second Mini Card Body. Only Contains text-->
+                                    <div class="card-body">
+<!--                                        Card Description-->
+                                        <div class="card-text">
+                                            Thin enough for optimum crispy to crunch ratio
+                                        </div>
+                                    </div>
+<!--                                    Radio Buttons for second Selection Size of Pizza-->
+                                    <ul class="list-group border list-group-flush">
+                                        <li class="list-group-item">
+                                            <input type="radio" aria-label="Radio button for Size 1 of thin crust" name="pizza-size"> Medium (12")
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="radio" aria-label="Radio button for Size 2 of thin crust" name="pizza-size"> Large (14")
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+<!--                            Card Footer for next button -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <a class="btn btn-primary" href="#sauce" role="button"> Next Step > </a>
+                            </div>
+                        </div>
+                </div> <!-- Div for Tab-pane -->
+                <div class="tab-pane fade" id="sauce" role="tabpanel" aria-labelledby="home-tab">
+<!--                    Main Card for Tab 1 will contain to child cards to regular crust and thin crust-->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">Testing for Tab 2</div>
+                        <!--                            Card Body for Chose Size and Crust-->
+                        <div class="card-body">
+                            <!--                                First Mini Card - Hand Tossed - DONE-->
+                            <div id="card-cheese" class="card mb-3">
+                                <div class="card-header">Hand Tossed</div>
+                                <!--                                    First Mini Card Body. Only Contains text-->
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        Garlic seasoned crust with a rich, buttery taste
+                                    </div>
+                                </div>
+                                <!--                                    Radio Button for first Selection Size of Pizza-->
+                                <ul class="list-group border list-group-flush">
+                                    <li class="list-group-item">
+                                        <input type="radio" aria-label="Radio button for Size 1" name="pizza-size"> Small (10")
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="radio" aria-label="Radio button for Size 1" name="pizza-size"> Medium (12")
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--                                Second Mini Card - Thin Crust-->
+                            <div id="card-sauce" class="card">
+                                <div class="card-header">Hand Tossed</div>
+                                <!--                                    Second Mini Card Body. Only Contains text-->
+                                <div class="card-body">
+                                    <!--                                        Card Description-->
+                                    <div class="card-text">
+                                        Thin enough for optimum crispy to crunch ratio
+                                    </div>
+                                </div>
+                                <!--                                    Radio Buttons for second Selection Size of Pizza-->
+                                <ul class="list-group border list-group-flush">
+                                    <li class="list-group-item">
+                                        <input type="radio" aria-label="Radio button for Size 1 of thin crust" name="pizza-size"> Medium (12")
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="radio" aria-label="Radio button for Size 2 of thin crust" name="pizza-size"> Large (14")
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--                            Card Footer for next button -->
+                        <div class="card-footer d-flex justify-content-end">
+                            <a class="btn btn-primary" href="#" role="button"> Next Step > </a>
+                        </div>
+                    </div>
+                </div> <!-- Div for Tab-pane -->
+                <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="home-tab">
+                    <!--                    Main Card for Tab 1 will contain to child cards to regular crust and thin crust-->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">Testing for Tab 2</div>
+                        <!--                            Card Body for Chose Size and Crust-->
+                        <div class="card-body">
+                            <!--                                First Mini Card - Hand Tossed - DONE-->
+                            <div id="card-hand-tossed" class="card mb-3">
+                                <div class="card-header">Hand Tossed</div>
+                                <!--                                    First Mini Card Body. Only Contains text-->
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        Garlic seasoned crust with a rich, buttery taste
+                                    </div>
+                                </div>
+                                <!--                                    Radio Button for first Selection Size of Pizza-->
+                                <ul class="list-group border list-group-flush">
+                                    <li class="list-group-item">
+                                        <input type="radio" aria-label="Radio button for Size 1" name="pizza-size"> Small (10")
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="radio" aria-label="Radio button for Size 1" name="pizza-size"> Medium (12")
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--                                Second Mini Card - Thin Crust-->
+                            <div id="card-thin-crust" class="card">
+                                <div class="card-header">Hand Tossed</div>
+                                <!--                                    Second Mini Card Body. Only Contains text-->
+                                <div class="card-body">
+                                    <!--                                        Card Description-->
+                                    <div class="card-text">
+                                        Thin enough for optimum crispy to crunch ratio
+                                    </div>
+                                </div>
+                                <!--                                    Radio Buttons for second Selection Size of Pizza-->
+                                <ul class="list-group border list-group-flush">
+                                    <li class="list-group-item">
+                                        <input type="radio" aria-label="Radio button for Size 1 of thin crust" name="pizza-size"> Medium (12")
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input type="radio" aria-label="Radio button for Size 2 of thin crust" name="pizza-size"> Large (14")
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--                            Card Footer for next button -->
+                        <div class="card-footer d-flex justify-content-end">
+                            <a class="btn btn-primary" href="#sauce" role="button"> Next Step > </a>
+                        </div>
+                    </div>
+                </div> <!-- Div for Tab-pane -->
+            </div> <!-- Div for tab-content -->
+        </section>
 
 <!--   --------------------------------------------------------------------------     -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
