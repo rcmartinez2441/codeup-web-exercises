@@ -1,0 +1,14 @@
+header {
+    border-bottom: #0fb784 solid 10px;
+}
+header h2 {
+    color: #0fb784;
+}
+header li {
+    font-size:1.2em;
+}
+
+h2  {
+    color:#3B94D9;
+    font-weight: bold;
+}
