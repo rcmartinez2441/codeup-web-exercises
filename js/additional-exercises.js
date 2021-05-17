@@ -33,18 +33,25 @@ Write a function named cubeRoot(n) that returns the cube root of the input
 	// 	* * * *
 	// 	* * * * *
 
-	const starPyramid = () => {
-		let starPattern = '* '
-		let patternAdder = `* \n`
-		for (let i = 1; i < 5; i++){
-			starPattern += '* ';
-			patternAdder += starPattern + `\n`;
-		}
-		return patternAdder;
-	}
-	console.log(starPyramid());
-	// hope - blood orange
+	// const starPyramid = () => {
+	// 	let starPattern = '* '
+	// 	let patternAdder = `* \n`
+	// 	for (let i = 1; i < 5; i++){
+	// 		starPattern += '* ';
+	// 		patternAdder += starPattern + `\n`;
+	// 	}
+	// 	return patternAdder;
+	// }
+	// console.log(starPyramid());
+	// // hope - blood orange
 
+	//Write a function named secondToLast(arr) that returns the data type of the second to last element of the array
+	// parameter. When you call the function, pass in an array of your choosing
+	let arrayExample = ['this', 'is', 'an', 'array', 'bruh'];
+	const secondToLast = (array) => {
+		return array[array.length - 2];
+	}
+	console.log(secondToLast(arrayExample));
 
 //========================================================================================
 	/*

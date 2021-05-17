@@ -147,6 +147,15 @@
     .desktop-container {
         display: flex;
     }
-
+    footer {
+        display: flex;
+        border: solid;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-content: flex-end;
+    }
+    #social-media-links {
+        align-self: flex-end;
+    }
 
 }
