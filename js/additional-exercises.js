@@ -49,7 +49,7 @@ Write a function named cubeRoot(n) that returns the cube root of the input
 	// parameter. When you call the function, pass in an array of your choosing
 	let arrayExample = ['this', 'is', 'an', 'array', 'bruh'];
 	const secondToLast = (array) => {
-		return array[array.length - 2];
+		return typeof array[array.length - 2];
 	}
 	console.log(secondToLast(arrayExample));
 
