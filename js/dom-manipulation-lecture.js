@@ -1,32 +1,32 @@
 // DOM
 
-let school = {
-	teacher: 'Casey',
-	students: 30,
+// let school = {
+// 	teacher: 'Casey',
+// 	students: 30,
 	//objects can also hold functions
 	//AKA Methods
-	getNumStudents: function () {
-		console.log(`num of students is ${this.students}`);
-	}
-}
+// 	getNumStudents: function () {
+// 		console.log(`num of students is ${this.students}`);
+// 	}
+// }
 
 //print teachers names. Examples using Objects in JS
-console.log(school.teacher);
-console.log(school.students);
-console.log(school.getNumStudents());
+// console.log(school.teacher);
+// console.log(school.students);
+// console.log(school.getNumStudents());
 
 //Same concept will apply for Document Object Manipulation
 // getting Node by Element ID
-let lightgreenElement = document.getElementById("light-green");
-console.log(lightgreenElement);
+// let lightgreenElement = document.getElementById("light-green");
+// console.log(lightgreenElement);
 
 //what's being returned?
 // The entire HTML line(element) AKA a *NODE ELEMENT* will be  logged like this:
 // <p id="light-green"> THis is a P tag</p>
 
 // By Class
-let redElement = document.getElementsByClassName(`red`);
-console.log(redElement);
+// let redElement = document.getElementsByClassName(`red`);
+// console.log(redElement);
 
 //Will return an Array
 //*******************
@@ -39,14 +39,15 @@ console.log(redElement);
 //******************
 
 //If you want to select a specific Node with the class red, since they are considered arrays now, you can select the second p-tag with red class liek this:
-console.log(redElement[1]);
+// console.log(redElement[1]);
 
 //How to select by element regardless of Class or ID
 
-let getElements = document.getElementsByTagName('p');
-console.log(getElements);
+// let getElements = document.getElementsByTagName('p');
+// console.log(getElements);
 
 //Will log the array with all p tags
+//****************************************************************
 
 // // TODO: build a simple 2 x 3 grid using bootstrap and give each
 //  item a unique border color. Give any three of those of those divs a
@@ -59,14 +60,29 @@ console.log(getElements);
 //  represents a div/item with a red border. 2) an array of elements
 //  whose text is dark-green. 3) an array of all paragraph elements
 
-let redBorderNode = document.getElementById(`bd-red`);
-let darkGreenElements = document.getElementsByClassName(`font-dark-green`);
-let paragraphElements = document.getElementsByTagName(`p`);
-console.log(`This is red border node:`);
-console.log(redBorderNode);
+// let redBorderNode = document.getElementById(`bd-red`);
+// let darkGreenElements = document.getElementsByClassName(`font-dark-green`);
+// let paragraphElements = document.getElementsByTagName(`p`);
+// console.log(`This is red border node:`);
+// console.log(redBorderNode);
+//
+// console.log(`This is all elements with dark-green font:`);
+// console.log(darkGreenElements);
+//
+// console.log(`This is all p-tags in html:`);
+// console.log(paragraphElements);
 
-console.log(`This is all elements with dark-green font:`);
-console.log(darkGreenElements);
+//*************************************************
+// WORKING WITH FORMS IN THE DOM
 
-console.log(`This is all p-tags in html:`);
-console.log(paragraphElements);
+//if you want to select a particular section in the form, it would be written like this
+// let sectionOfFrom = document.forms.pizz[0].value
+//
+
+//with DOM you can remove attributes (ids, classes), get attributes and set attributes
+//1. SELECT the element 2. REMOVE the existing attribute 3. SET brand new attribute
+//1. document.getElementById()
+//2. document.getElementById().removeAttribute()
+//3. document.getElementById().setAttribute([attribute], [values])
+
+
