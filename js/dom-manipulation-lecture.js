@@ -84,5 +84,21 @@
 //1. document.getElementById()
 //2. document.getElementById().removeAttribute()
 //3. document.getElementById().setAttribute([attribute], [values])
+//*********************************************************************
+
+//*************** STYLING ELEMENTS ************* uncomment the row/divs section
+let orangeDiv = document.getElementById(`bd-orange`);
+console.log(orangeDiv)
+
+//will change border style to this other color
+orangeDiv.style.border = "6px dotted orange"
+
+//changing  inner contents of a node
+let changePText = document.getElementById('change-text');
+console.log(changePText.innerText) //will log the p tag text
+
+//this changes the p#change-text to whatever ytou set it
+// changePText.innerText = 'this is the new text inside this p#change-text';
+
 
 
