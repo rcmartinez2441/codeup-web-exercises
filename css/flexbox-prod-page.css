@@ -11,83 +11,92 @@ body {
     color: white;
     font-family: sans-serif;
 }
-@media screen and (min-width: 200px) {
-    body {
-        display: flex;
-        flex-flow: column wrap;
-    }
-    nav {
-        border-bottom: #00adb5 solid 1px;
-        background-color: #393e46;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        margin:0;
-        width: 100%;
-    }
-    ul {
-        margin:0;
-        padding: 0 0 .1em;
-        display: flex;
-        /*background-color: #57e8f0;*/
-        list-style: none;
-    }
-    li {
-        display: flex;
-        /*background-color: #f07558;*/
-        margin-right:.5vw;
-    }
-    a{
-        padding:2em 1em;
-        height: 100%;
-        /*padding: 5px;*/
-        text-align: center;
-        text-decoration: none;
-        background-color: #34adb5;
-        border: solid 1px black;
-        border-radius: 2px;
-        color: white;
-        margin: 0;
-        font-size: .75em;
-    }
-    a:hover {
-        /*box-shadow: 2px 3px white;*/
-        border: 3px solid white;
-        background-color:#37d6de;
-    }
-
-    nav img {
-        border: solid white 2px;
-        background-color: #00adb5;
-        border-radius: 50%;
-        height: 4em;
-        padding: 5px;
-        margin:7px 1px 7px 0;
-    }
-/*    Header Section */
-    header {
-        width: 100%;
-        border: solid;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        align-content: center;
-        background-image: url("../img/glasses-dog.jpeg");
-        background-size:cover;
-        background-repeat: no-repeat;
-
-    }
-    h1 {
-        font-size: 2em;
-        text-align: center;
-        margin-bottom: 0;
-    }
-    button {
-        width: 10em;
-        max-width: 50%;
-        margin-bottom: 2em;
-    }
+.logo {
+    background-image: url("../assets/icons8-bmo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: solid;
 }
+section.container-fluid {
+    font-size: ;
+}
+/*@media screen and (min-width: 200px) {*/
+/*    body {*/
+/*        display: flex;*/
+/*        flex-flow: column wrap;*/
+/*    }*/
+/*    nav {*/
+/*        border-bottom: #00adb5 solid 1px;*/
+/*        background-color: #393e46;*/
+/*        display: flex;*/
+/*        flex-flow: row wrap;*/
+/*        justify-content: space-between;*/
+/*        margin:0;*/
+/*        width: 100%;*/
+/*    }*/
+/*    ul {*/
+/*        margin:0;*/
+/*        padding: 0 0 .1em;*/
+/*        display: flex;*/
+/*        !*background-color: #57e8f0;*!*/
+/*        list-style: none;*/
+/*    }*/
+/*    li {*/
+/*        display: flex;*/
+/*        !*background-color: #f07558;*!*/
+/*        margin-right:.5vw;*/
+/*    }*/
+/*    a{*/
+/*        padding:2em 1em;*/
+/*        height: 100%;*/
+/*        !*padding: 5px;*!*/
+/*        text-align: center;*/
+/*        text-decoration: none;*/
+/*        background-color: #34adb5;*/
+/*        border: solid 1px black;*/
+/*        border-radius: 2px;*/
+/*        color: white;*/
+/*        margin: 0;*/
+/*        font-size: .75em;*/
+/*    }*/
+/*    a:hover {*/
+/*        !*box-shadow: 2px 3px white;*!*/
+/*        border: 3px solid white;*/
+/*        background-color:#37d6de;*/
+/*    }*/
+
+/*    !*nav img {*!*/
+/*    !*    border: solid white 2px;*!*/
+/*    !*    background-color: #00adb5;*!*/
+/*    !*    border-radius: 50%;*!*/
+/*    !*    height: 4em;*!*/
+/*    !*    padding: 5px;*!*/
+/*    !*    margin:7px 1px 7px 0;*!*/
+/*    !*}*!*/
+/*!*    Header Section *!*/
+/*    header {*/
+/*        width: 100%;*/
+/*        border: solid;*/
+/*        display: flex;*/
+/*        flex-flow: column wrap;*/
+/*        align-items: center;*/
+/*        align-content: center;*/
+/*        background-image: url("../img/glasses-dog.jpeg");*/
+/*        background-size:cover;*/
+/*        background-repeat: no-repeat;*/
+
+/*    }*/
+/*    h1 {*/
+/*        font-size: 2em;*/
+/*        text-align: center;*/
+/*        margin-bottom: 0;*/
+/*    }*/
+/*    button {*/
+/*        width: 10em;*/
+/*        max-width: 50%;*/
+/*        margin-bottom: 2em;*/
+/*    }*/
+/*}*/
 /*Desktop Query*/
 /*@media screen and (min-width: 800px){*/
 /*!*Will work on right side of NAV*!*/

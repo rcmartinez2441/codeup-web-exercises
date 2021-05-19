@@ -1,0 +1,29 @@
+.red {
+    color: red;
+}
+.bg-color-blue {
+    background-color: #3B94D9;
+}
+.font-dark-green {
+    color: darkgreen;
+}
+
+#bd-red {
+    border: solid red;
+}
+
+#bd-green {
+    border: solid lightgreen;
+}
+#bd-purple {
+    border: solid purple ;
+}
+#bd-orange {
+    border: solid orange;
+}
+#bd-black {
+    border: solid;
+}
+#bd-blue {
+    border: solid blue;
+}

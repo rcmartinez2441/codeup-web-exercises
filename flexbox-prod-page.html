@@ -5,6 +5,7 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="css/flexbox-prod-page.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=DM+Serif+Display&family=Montserrat&display=swap"
@@ -12,13 +13,28 @@
         <title>Flexbox One</title>
     </head>
     <body>
-        <nav>
-            <img src="assets/icons8-bmo.svg" alt="logo" id="logo">
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">We're Hiring!</a></li>
-            </ul>
+        <nav class="nav -lg navbar-light bg-primary">
+            <section class="container-fluid">
+                <div class="row">
+                    <div class="nav-item logo col"></div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navbar-nav">
+                    <div class="nav-item col"><span>ABOUT</span></div>
+                    <div class="nav-item col"><span>PRODUCTS</span></div>
+                    <div class="nav-item col"><span>WE'RE HIRING</span></div>
+                        </div>
+                    </div>
+
+                <!--            <ul>-->
+                <!--                <li><a href="#">About</a></li>-->
+                <!--                <li><a href="#">Products</a></li>-->
+                <!--                <li><a href="#">We're Hiring!</a></li>-->
+                <!--            </ul>-->
+                </div>
+            </section>
         </nav>
         <header>
             <h1>Keep It Simple Stationery</h1>
