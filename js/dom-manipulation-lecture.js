@@ -140,33 +140,58 @@
 //************************************************************************
 //USING APPEND
 
-let newContainer = document.createElement('div');
-newContainer.setAttribute('class', 'container')
-console.log(newContainer);
+// let newContainer = document.createElement('div');
+// newContainer.setAttribute('class', 'container')
+// console.log(newContainer);
+//
+// let newPars = document.createElement('p');
+// newPars.innerText= 'Wassaaa';
+//
+// //Appending Child
+// newContainer.appendChild(newPars);
+//
+// let existingDivs = document.getElementsByClassName('toBeFilled');
+// existingDivs[0].appendChild(newContainer);
+// console.log(existingDivs[0]);
+//
+// //** USING QUERY SELECTOR
+// // Format goes:
+// let querySelectorExamples = document.querySelector('.toBeFilled');
+// // Query Selector will look at HTML from top to bottom and return the first instance that it receives. It will start from <HTML> element node
+// //querySelectorAll is more dynamic. to select  some very precise
+// // Adding to the end of the body of an HTML
+// // document.querySelector('body').appendChild(variable);
+//
+// //***************************** **************************************
+// //Removing Children
+// // 1. Select our element
+// let petUl = document.querySelector('#pets');
+// petUl.removeChild(document.querySelector('#cats'));
 
-let newPars = document.createElement('p');
-newPars.innerText= 'Wassaaa';
-
-//Appending Child
-newContainer.appendChild(newPars);
-
-let existingDivs = document.getElementsByClassName('toBeFilled');
-existingDivs[0].appendChild(newContainer);
-console.log(existingDivs[0]);
-
-//** USING QUERY SELECTOR
-// Format goes:
-let querySelectorExamples = document.querySelector('.toBeFilled');
-// Query Selector will look at HTML from top to bottom and return the first instance that it receives. It will start from <HTML> element node
-//querySelectorAll is more dynamic. to select  some very precise
-// Adding to the end of the body of an HTML
-// document.querySelector('body').appendChild(variable);
-
-//***************************** **************************************
-//Removing Children
-// 1. Select our element
-let petUl = document.querySelector('#pets');
-petUl.removeChild(document.querySelector('#cats'));
+// TODO: change the text inside of 1 of the paragraphs to be a short paragraph about you
+let aboutMe = document.getElementsByTagName('p');
+console.log(aboutMe);
+aboutMe[0].innerText = `About Me: I like video games, anime and food yeah I know, super unique right`;
+// TODO: log the second paragraph element from the list of all paragraphs
+console.log(aboutMe[1]);
+// TODO: create a new ul element and 5 new li elements. Each of your li's should have some text inside of it
+let newUlElement = document.createElement('ul').innerHTML = `
+	<li>List 1</li>
+	<li>List 2</li>
+	<li>List 3</li>
+	<li>List 4</li>
+	<li>List 5</li>
+`;
+console.log(newUlElement);
+// TODO: replace the last div's paragraph with your new ul. make sure the ul has all 5 li's inside of it
+let replacedDiv = document.querySelector('#bd-blue');
+console.log(replacedDiv);
+replacedDiv.innerHTML = `${newUlElement}`;
+// TODO: remove the last li
+let lastLiElement = document.getElementsByTagName("li");
+console.log(lastLiElement);
+let removedLi = replacedDiv.removeChild(lastLiElement[4]);
+console.log(removedLi);
 
 
 
