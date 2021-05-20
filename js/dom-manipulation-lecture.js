@@ -87,18 +87,87 @@
 //*********************************************************************
 
 //*************** STYLING ELEMENTS ************* uncomment the row/divs section
-let orangeDiv = document.getElementById(`bd-orange`);
-console.log(orangeDiv)
+
+// let orangeDiv = document.getElementById(`bd-orange`);
+// console.log(orangeDiv)
 
 //will change border style to this other color
-orangeDiv.style.border = "6px dotted orange"
+
+// orangeDiv.style.border = "6px dotted orange"
 
 //changing  inner contents of a node
-let changePText = document.getElementById('change-text');
-console.log(changePText.innerText) //will log the p tag text
+
+// let changePText = document.getElementById('change-text');
+// console.log(changePText.innerText) //will log the p tag text
 
 //this changes the p#change-text to whatever ytou set it
 // changePText.innerText = 'this is the new text inside this p#change-text';
+
+//**********************************************************************
+// 05/20/21 Lecture Notes
+// Creating elements
+// .createElement();
+
+// // 1. Creating an Element
+// let newEl = document.createElement('p');
+// console.log(newEl);
+//
+// // 2. changing the guts of an element using InnerText
+// newEl.innerText = 'This is going into the new P tag created';
+// console.log(newEl);
+//
+// //Using innerHTML - Working with form named "pizza"
+// let pizzaForm = document.getElementsByClassName("pizza");
+// console.log(pizzaForm);
+// pizzaForm[0].innerHTML = '';
+// console.log(pizzaForm[0]);
+//
+// //**** MINI EXERCISE ***
+// // 1. Create Element
+// let newElement = document.createElement('div')
+// // 2. create UL with a few li's
+// let newUL = document.createElement('ul');
+// console.log(newUL);
+// // 3. change the innertext of element created
+// newElement.innerText = 'this is a brand new div';
+// // 4.change innerHTML of elements created
+// newUL.innerHTML = `
+// 	<li>test 1</li>
+// 	<li>tes 2</li>`;
+//
+// console.log(newUL);
+
+//************************************************************************
+//USING APPEND
+
+let newContainer = document.createElement('div');
+newContainer.setAttribute('class', 'container')
+console.log(newContainer);
+
+let newPars = document.createElement('p');
+newPars.innerText= 'Wassaaa';
+
+//Appending Child
+newContainer.appendChild(newPars);
+
+let existingDivs = document.getElementsByClassName('toBeFilled');
+existingDivs[0].appendChild(newContainer);
+console.log(existingDivs[0]);
+
+//** USING QUERY SELECTOR
+// Format goes:
+let querySelectorExamples = document.querySelector('.toBeFilled');
+// Query Selector will look at HTML from top to bottom and return the first instance that it receives. It will start from <HTML> element node
+//querySelectorAll is more dynamic. to select  some very precise
+// Adding to the end of the body of an HTML
+// document.querySelector('body').appendChild(variable);
+
+//***************************** **************************************
+//Removing Children
+// 1. Select our element
+let petUl = document.querySelector('#pets');
+petUl.removeChild(document.querySelector('#cats'));
+
 
 
 
