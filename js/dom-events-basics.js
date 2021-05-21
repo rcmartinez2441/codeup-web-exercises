@@ -111,6 +111,31 @@ function removeImageClickEvent () {
         sus.removeEventListener('click', appendAnotherOneDiv);
 }
 
+//****** Lecture NOtes for 05/21/21 ******
+// Working with form input event listeners
+
+addInputEventListener();
+
+function addInputEventListener () {
+        document.getElementById('user-input')
+            .addEventListener('input', getInputListener);
+}
+
+function getInputListener () {
+     document.getElementById('text-output')
+         //try to use TextContent instead of innerText
+         //Lexical scoping - 'this' is refering to element  'user-input'
+         //HAVING ISSUES FINDING 'this'? FIND OUT WHERE ITS SCOPED TO
+         .textContent = this.value;
+    console.log(this.value);
+}
+
+//Using Forma and Submit BUtton to reocrd text into HTML
+function addButtonEvent () {
+    document.getElementById('button')
+        .addEventListener('click',)
+}
+
 
 
 
