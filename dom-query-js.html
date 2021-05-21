@@ -38,69 +38,74 @@
 
         <script>
 			(function () {
-				"use strict";
+					"use strict";
 // *****************************************************************************************
-				// Create array that contains each of the callback functions being used . maybe like about 4, 1 per button
-				let callbackArray = [mainHeader, subHeader, listItems, subParagraphs];
-
-				//Function to create buttons and append them into the div id = button-container
-                //This Function is being called from inside buttonWhenClicked()
-				function createAndAppendButtons(array) {
-					let arrayOfButtons = [];
-					let buttonContainer = document.getElementById('button-container');
-					//For each function in the Array callBackArray create a button with some class attributes and store those buttons in arrayOfButtons
-					array.forEach((functionInArray) => {
-						let currentIndex = array.indexOf(functionInArray);
-						// buttonContainer = document.getElementById('button-container');
-						arrayOfButtons[currentIndex] = document.createElement('button');
-						let currentButton = arrayOfButtons[currentIndex];
-						currentButton.setAttribute('class', 'col btn btn-info m-1');
-						buttonContainer.appendChild(currentButton);
-						// console.log ( buttonArray[array.indexOf(functionInArray)] );
-					});
-					//Once all buttons are stored in arrayOfButtons, call add ButtonsNames to add InnerText   to each button
-					addButtonNames(arrayOfButtons);
-
-					console.log(buttonContainer);
-					console.log(arrayOfButtons);
-
-					return arrayOfButtons;
-				}
-
-				// createAndAppendButtons(callbackArray);
-
-// *************************Function will add appropriate button names**************************************
-
-				function addButtonNames(arrayWithButtons) {
+					// Create array that contains each of the callback functions being used . maybe like about 4, 1 per button
+					let callbackArray = [
+						mainHeader,
+                        subHeader,
+                        listItems,
+                        subParagraphs,
+                        thisWebpageIsBoring
+                    ];
 					//Array Containing each button title
 					let arrayOfButtonTitles = [
 						'Change Main Header',
-                        'Change Sub-Header',
-                        'Change List Items',
-                        'Change Sub-Paragraphs',
-                        'End All Event Listeners'
-                    ];
-                    //Add appropriate Button title according to current index
-					for (let i = 0; i < arrayWithButtons.length; i++){
-						if (arrayWithButtons[i]) {
-							let button = document.getElementsByTagName('button');
-							button[i].innerText = arrayOfButtonTitles[i];
+						'Change Sub-Header',
+						'Change List Items',
+						'Change Sub-Paragraphs',
+						'Change Entire Website Style'
+					];
+					//Function to create buttons and append them into the div id = button-container
+					//*****his Function is being called from inside buttonWhenClicked()****
+					function createAndAppendButtons(array) {
+						let arrayOfButtons = [];
+						let buttonContainer = document.getElementById('button-container');
+
+						//For each function in the Array - callBackArray - it creates a button with some class attributes and store those buttons in arrayOfButtons
+						array.forEach((functionInArray) => {
+							let currentIndex = array.indexOf(functionInArray);
+							// buttonContainer = document.getElementById('button-container');
+							arrayOfButtons[currentIndex] = document.createElement('button');
+							let currentButton = arrayOfButtons[currentIndex];
+							currentButton.setAttribute('class', 'col btn btn-info m-1');
+							buttonContainer.appendChild(currentButton);
+							// console.log ( buttonArray[array.indexOf(functionInArray)] );
+						});
+						//Once all buttons are stored in arrayOfButtons, call add ButtonsNames to add InnerText   to each button
+						addButtonNames(arrayOfButtons);
+
+						console.log(buttonContainer);
+						console.log(arrayOfButtons);
+
+						return arrayOfButtons;
+					}
+
+					// createAndAppendButtons(callbackArray);
+
+// *************************Function will add appropriate button names**************************************
+
+					function addButtonNames(arrayWithButtons) {
+						//Add appropriate Button title according to current index
+						for (let i = 0; i < arrayWithButtons.length; i++) {
+								let button = document.getElementsByTagName('button');
+								button[i].innerText = arrayOfButtonTitles[i];
 						}
-                    }
-					// console.log('this is from function addButtonNames');
-					// console.log(arrayWithButtons);
-				}
+						// console.log('this is from function addButtonNames');
+						// console.log(arrayWithButtons);
+					}
 
 // ********************** Function that contains all evens when button is clicked **************************
 
-                function buttonWhenClicked (arrayWithFunctions){
-					let arrayWithButtons = createAndAppendButtons(arrayWithFunctions);
-					arrayWithFunctions.forEach( arrayElement => {
-						let currentIndex = arrayWithFunctions.indexOf(arrayElement);
-						arrayWithButtons[currentIndex].addEventListener('click', arrayElement, {once: true});
-					});
-                }
-                buttonWhenClicked(callbackArray);
+					function buttonWhenClicked(arrayWithFunctions) {
+						let arrayWithButtons = createAndAppendButtons(arrayWithFunctions);
+						arrayWithFunctions.forEach(arrayElement => {
+							let currentIndex = arrayWithFunctions.indexOf(arrayElement);
+							arrayWithButtons[currentIndex].addEventListener('click', arrayElement, {once: true});
+						});
+					}
+
+					buttonWhenClicked(callbackArray);
 					//button[].addListener('click', callbackArray[]);
 
 // ********************* mainHeader() ******************************************************************
@@ -114,7 +119,7 @@
 					//Writing a function for main header
 					function mainHeader() {
 						let mainHeader = document.getElementById('main-header')
-                        mainHeader.innerText = `Javascript is Cool`;
+						mainHeader.innerText = `Javascript is Cool`;
 						console.log('Main Header Button Clicked and Activated');
 						return true;
 					}
@@ -129,8 +134,8 @@
 
 					//Creating a Function for Sub-Header
 					function subHeader() {
-                        let subHeader = document.getElementById('sub-header');
-                        subHeader.style.color = 'blue';
+						let subHeader = document.getElementById('sub-header');
+						subHeader.style.color = 'blue';
 						console.log('Sub Header Button Clicked and Activated');
 						return true;
 					}
@@ -154,13 +159,13 @@
 					function listItems() {
 						let listItems = document.getElementsByTagName('li');
 						listItems = [...listItems];
-						listItems.forEach( listItem => {
-							if (listItems.indexOf(listItem) % 2 !== 0){
+						listItems.forEach(listItem => {
+							if (listItems.indexOf(listItem) % 2 !== 0) {
 								listItem.style.color = 'grey'
-                            }
-                        });
+							}
+						});
 						let lastListItem = listItems[0]
-                        lastListItem.style.color = 'blue';
+						lastListItem.style.color = 'blue';
 						console.log('List Items Button Clicked and Activated');
 						return true;
 					}
@@ -175,13 +180,25 @@
 					// subParagraphs[0].innerHTML = 'Mission Complete';
 
 					function subParagraphs() {
-					    let subParagraphs = document.getElementsByClassName('sub-paragraph');
-					    subParagraphs[0].innerHTML = 'MISSION COMPLETE!';
+						let subParagraphs = document.getElementsByClassName('sub-paragraph');
+						subParagraphs[0].innerHTML = 'MISSION COMPLETE!';
 						console.log('Sub Paragraphs Button Clicked and Activated');
 						return true;
 					}
 
 // *******************************************************************************************************
+                    // Styling using CSS and Bootstrap
+                    function thisWebpageIsBoring () {
+                        let bodyStylings = document.body.setAttribute('class', 'bg-');
+						//UL Stylings
+						let classUL = document.getElementsByTagName('ul');
+                        classUL[0].setAttribute('class','list-group');
+                        let classLi = document.getElementsByTagName('li');
+                        classLi = [...classLi];
+                        classLi.forEach(liElement => {
+                            liElement.setAttribute('class', 'list-group-item border col-6 bg-secondary');
+						});
+                    }
 				}
 			)();
         </script>
