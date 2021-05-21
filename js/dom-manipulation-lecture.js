@@ -190,6 +190,7 @@ replacedDiv.innerHTML = `${newUlElement}`;
 // TODO: remove the last li
 let lastLiElement = document.getElementsByTagName("li");
 console.log(lastLiElement);
+
 let removedLi = replacedDiv.removeChild(lastLiElement[4]);
 console.log(removedLi);
 
