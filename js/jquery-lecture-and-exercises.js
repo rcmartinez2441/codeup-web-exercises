@@ -99,6 +99,4 @@
 	console.timeEnd('For Document')
 
 
-
-
 })();

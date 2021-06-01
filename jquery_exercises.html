@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+              integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+              crossorigin="anonymous">
+        <title>jquery_exercises</title>
+    </head>
+    <body>
+
+
+        <script src="jquery/jquery-2.2.4.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+                crossorigin="anonymous"></script>
+        <script>
+			// $(document).ready( function () {
+			// 	alert('The page has been loaded');
+			// })
+
+			//Create content in your HTML file using at least the following elements: h1, p, ul, li, div.
+			$('body').prepend(`<div class="container bg-info" id="container"></div>`)
+
+			// Add several attributes to your elements; you will need both id and class attributes.
+			$('#container')
+				.append('<h1 id="h1-tag" class="text-black">This is the Header <br></h1>')
+				.append('<p id="p-tag" class="text-black codeup">This is a p-tag</p>')
+				.append('<ul id="ul-tag" class="list-group"></ul>')
+				.append(`<div id="div-tag" class="text-white">This is a Div</div>`);
+
+			$('ul')
+				.append('<li id="li-tag" class="list-group-item codeup">This is a list item</li>');
+			// //*******************************************************************************
+			// 	// Use jQuery to select an element by the id. Alert the contents of the element.
+			// 	//Update the jQuery code to select and alert a different id.
+			//
+			// 	function contents (selector){
+			// 		return $(selector).html();
+			// 	}
+			// 	alert(contents('#h1-tag'));
+			// 	alert(contents('#p-tag'));
+			// 	alert(contents('#div-tag'));
+
+			//** CLASS SELECTORS ***
+			//Update your code so that at least 3 different elements have the same class named codeup.
+			//Updated
+			//Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+
+			// $('.codeup').css({
+			//     "border":"solid 1px red"
+			// })
+
+			//Remove the class from one of the elements. Refresh and test that the border has been removed.
+			//Border gets removed
+			//Give another element an id of codeup. Does this element get a border now?
+			//border is added to new element with class- codeup
+
+			//** ELEMENT SELECTORS **
+			//Remove your custom jQuery code from previous exercises.
+			//Done
+			//Using jQuery, set the font-size of all li elements to 20px.
+			$('li').css({
+				"font-size": "20px"
+			});
+			//Craft selectors that highlight all the h1, p, and li elements.
+
+			// $('h1').css({
+            //     'display':'inline',
+            //     'background-color':'yellow',
+            // });
+            //
+			// $('p').css({
+			// 	'display':'inline',
+			// 	'background-color':'yellow',
+			// });
+            //
+			// $('li').css({
+			// 	'background-color':'yellow',
+			// });
+
+			//Create a jQuery statement to alert the contents of your h1 element(s).
+            alert($('h1').html());
+
+			//** MULTIPLE SELECTORS **
+			//Combine your selectors that highlight all the h1, p, and li elements.
+            $('h1, p, li').css({
+                'background-color':'yellow'
+            })
+
+        </script>
+    </body>
+</html>
