@@ -93,10 +93,11 @@
 
 	console.time('For Document');
 	$(document).ready( function () {
-		wait('.orange', 2000);
+		wait('.orange', 3000);
 		console.log('Document loaded');
 	});
 	console.timeEnd('For Document')
+
 
 
 })();
