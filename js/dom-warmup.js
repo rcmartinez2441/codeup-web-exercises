@@ -20,7 +20,7 @@
 					'font-weight': 'bold',
 					'color': 'white',
 					'background':'#ff449f'
-				})
+				});
 
 
 		});

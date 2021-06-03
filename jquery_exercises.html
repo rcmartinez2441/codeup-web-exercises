@@ -30,14 +30,17 @@
 			$('body').prepend(`<div class="container bg-info" id="container"></div>`)
 
 			// Add several attributes to your elements; you will need both id and class attributes.
-			$('#container')
+			let container = $('#container');
+			container
 				.append('<h1 id="h1-tag" class="text-black">This is the Header <br></h1>')
 				.append('<p id="p-tag" class="text-black codeup">This is a p-tag</p>')
 				.append('<ul id="ul-tag" class="list-group"></ul>')
 				.append(`<div id="div-tag" class="text-white">This is a Div</div>`);
 
 			$('ul')
-				.append('<li id="li-tag" class="list-group-item codeup">This is a list item</li>');
+				.append(
+					`<li id="li-tag" class="list-group-item codeup">This is a list item</li>
+                      <li class="list-group-item codeup"> Second list Item</li>  `);
 			// //*******************************************************************************
 			// 	// Use jQuery to select an element by the id. Alert the contents of the element.
 			// 	//Update the jQuery code to select and alert a different id.
@@ -62,39 +65,90 @@
 			//Border gets removed
 			//*Give another element an id of codeup. Does this element get a border now?
 			//border is added to new element with class- codeup
-
-			//** ELEMENT SELECTORS **
-			//Remove your custom jQuery code from previous exercises.
-			//Done
-			//Using jQuery, set the font-size of all li elements to 20px.
-			$('li').css({
-				"font-size": "20px"
-			});
+			//
+			// //** ELEMENT SELECTORS **
+			// //Remove your custom jQuery code from previous exercises.
+			// //Done
+			// //Using jQuery, set the font-size of all li elements to 20px.
+			// $('li').css({
+			// 	"font-size": "20px"
+			// });
 			//Craft selectors that highlight all the h1, p, and li elements.
 
 			// $('h1').css({
-            //     'display':'inline',
-            //     'background-color':'yellow',
-            // });
-            //
+			//     'display':'inline',
+			//     'background-color':'yellow',
+			// });
+			//
 			// $('p').css({
 			// 	'display':'inline',
 			// 	'background-color':'yellow',
 			// });
-            //
+			//
 			// $('li').css({
 			// 	'background-color':'yellow',
 			// });
 
-			//Create a jQuery statement to alert the contents of your h1 element(s).
-            alert($('h1').html());
+			// //Create a jQuery statement to alert the contents of your h1 element(s).
+			// alert($('h1').html());
+			//
+			// //** MULTIPLE SELECTORS **
+			// //Combine your selectors that highlight all the h1, p, and li elements.
+			// $('h1, p, li').css({
+			//     'background-color':'yellow'
+			// })
 
-			//** MULTIPLE SELECTORS **
-			//Combine your selectors that highlight all the h1, p, and li elements.
-            $('h1, p, li').css({
-                'background-color':'yellow'
-            })
+			//**MOUSE EVENTS EXERCISE***
+			//Remove your custom jQuery code from previous exercises.
+			//Add jQuery code that will change the background color of an h1 element when clicked.
+			let h1 = $('#h1-tag');
+			let isClicked = false;
 
+			function changeColor() {
+				if (isClicked) {
+					h1.css({
+						'background-color': 'blue'
+					});
+					isClicked = false;
+				} else {
+					h1.css({
+						'background-color': 'red'
+					});
+					isClicked = true;
+				}
+			}
+
+			h1.click(changeColor)
+			//Make all paragraphs have a font size of 18px when they are double clicked.
+			isDoubleClicked = false;
+			let paragraphs = $('p');
+
+			function doubleClicked() {
+				if (isDoubleClicked) {
+					paragraphs.css({
+						'font-size': '18px'
+					});
+					isDoubleClicked = false;
+				} else {
+                    paragraphs.removeAttr('style');
+					isDoubleClicked = true;
+				}
+			}
+
+			paragraphs.dblclick(doubleClicked);
+			//Set all li text color to red when the mouse is hovering; reset to black when it is not.
+            let liElements = $('li');
+
+            function isHovering () {
+                liElements.css({
+                   'color':'red'
+                });
+            }
+            function isNotHovering () {
+            	liElements.removeAttr('style');
+            }
+
+            liElements.hover(isHovering, isNotHovering);
         </script>
     </body>
 </html>
