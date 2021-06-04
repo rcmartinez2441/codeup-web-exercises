@@ -65,3 +65,37 @@ function notHovered() {
 function beginHoverEvent() {
 	cardContainers.hover(isHovered, notHovered)
 }
+
+// TODO: When the user clicks the button with the id of 'submitBtn,' the background color of #override-bootstrap changes to 'red'
+
+$('#submitBtn').click(
+	function () {
+		$('#override-bootstrap').css({
+			backgroundColor: 'red'
+		})
+	});
+
+// TODO: When the user clicks a .card-text element, change its background color to 'red'
+$('.card-text').click(
+	function () {
+		$(this).css({
+			backgroundColor: 'red'
+		})
+	})
+
+
+//TODO: Add a new button to the html, directly below the first button. Give it an id of 'resetBtn'.
+// -> When the user clicks that button, the page should reload. (HINT: BOM has a super easy method for reloading the page. You'll still need a click event)
+
+$('#resetBtn').click(
+	function () {
+		location.reload()
+	})
+
+//TODO: When the user clicks the element with the id #main-title, its text font size doubles
+
+$('#main-title').click(function () {
+	$(this)
+		.removeClass('display-5')
+		.addClass('display-3')
+})
