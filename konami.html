@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+              integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+              crossorigin="anonymous">
+        <title>Konami Code</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row my-1 border rounded">
+                <h1 class="col-12 text-center text-white bg-warning  m-0 p-2">Konami Code</h1>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <img class='col-8 border rounded p-1 bg-warning' src="assets/tmnt.gif" alt="kowabunga-dude">
+            </div>
+        </div>
+        </div>
+
+        <script src="jquery/jquery-2.2.4.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+                crossorigin="anonymous"></script>
+        <script>
+			"use strict";
+
+			let secretCode = [38, 38, 40, 40, 37, 39, 37, 39, 65, 66, 13];
+			let userInput = [];
+			$(document).keyup(isSecretCode);
+			$('body').css({
+               'background-color':'#4aa96c'
+            });
+
+			function isSecretCode(event) {
+				userInput.push(event.keyCode);
+				console.log(event.keyCode);
+				if (secretCode.toString() === userInput.toString()) {
+					secretCodeSucceeded();
+					alert(`KOWABUNGA DUDE! Here is your 30 lives`);
+					userInput = [];
+				}
+				if (userInput.length > 10) {
+					alert(`KOWABUMMER DUDE! That's not the correct code`);
+					userInput = [];
+				}
+			}
+
+			function secretCodeSucceeded() {
+				let tmntOST = new Audio('assets/tmnt-ost.wav')
+				tmntOST.play();
+				function stopMusic () {
+					tmntOST.pause()
+                }
+				setInterval( stopMusic, 15000);
+			}
+
+			//Keycodes for each arrowkey:
+			//Up = 38; Down = 40; Left = 37; Right = 39; A = 65; B = 66; ENTER = 13;
+
+			// Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)
+			// Find the matching sequence using the code above for each key in the Konami Code.
+			// 	Don't worry about capital a or b just check for lowercase.
+			// After the correct Konami Code sequence is inputted, have the script alert the user: "You have added 30 lives! Other ideas:
+			// Change the background screen.
+			// 	Play a sound.
+			// 	Be creative!
+			// 	Happy Playing.
+        </script>
+    </body>
+</html>
