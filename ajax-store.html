@@ -34,11 +34,17 @@
 				"use strict";
 				// TODO: Create an AJAX GET request for the file under data/inventory.json
 				let button = $('button');
-				$.get("data/inventory.json").done(function (data) {
-					//functions do to stuff here
-					appendSomeTables(data);
-					addSomeStyling();
-				})
+
+				function loadToolStore() {
+					$("#insertProducts").html('');
+					$.get("data/inventory.json").done(function (data) {
+						//functions do to stuff here
+						appendSomeTables(data);
+						addSomeStyling();
+					})
+				}
+				loadToolStore();
+
 				// TODO: Take the data from inventory.json and append it to the products table
 				//HINT: Your data should come back as a JSON object; use console.log() to inspect its contents and fields
 				//HINT: You will want to target #insertProducts for your new HTML elements
@@ -87,18 +93,14 @@
 						})
 
 					button.css({
-                        fontSize: '2em',
-                        fontWeight:'bold',
-                        border:'white 3px solid',
+						fontSize: '2em',
+						fontWeight: 'bold',
+						border: 'white 3px solid',
 					})
 
 				}
 
-				function refreshWithoutReloading (e){
-					e.preventDefault();
-                    location.reload();
-                }
-				button.click(refreshWithoutReloading)
+				button.click(loadToolStore);
 
 
 			})();
