@@ -11,15 +11,36 @@
               crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+        <style>
+            .invisible {
+                visibility: hidden;
+            }
+            strong {
+                text-decoration: underline;
+            }
+
+            dt {
+                margin-top: 1em;
+                margin-bottom: .5em;
+                font-size: 2em;
+            }
+
+            .dtHighlight {
+                background-color: #57e8f0;
+            }
+
+        </style>
     </head>
-    <body>
-        <div class="container">
+    <body class="bg-light text-white">
+        <div class="container bg-info">
             <div class="row">
-                <h2 class="col-12">10 FAQs About National Parks</h2>
+                <h2 class="col-12 mb-4">10 FAQs About National Parks</h2>
+                <h6 class="col-12 mb-2">Click Here to Show Park Facts</h6>
                 <dl class="col-12">
                     <dt>GREAT SMOKY MOUNTAINS NATIONAL PARK</dt>
                     <dd>
-                        <img src="assets/great-smoky-mountains-faq.jpeg" alt="frog">
+                        <img class='border rounded' src="assets/great-smoky-mountains-faq.jpeg" alt="frog">
+                        <br>
                         <strong>Location:</strong> Western North Carolina and Eastern Tennessee
                         <br>
                         Great Smoky Mountains National Park has been dubbed the "salamander capital of the world," and
@@ -30,6 +51,7 @@
                     <dt>GRAND CANYON NATIONAL PARK</dt>
                     <dd>
                         <img src="assets/grand-canyon-faq.jpeg" alt="grand-canyon">
+                        <br>
                         <strong>Location:</strong> Northern Arizona
                         <br>
                         If you’re lucky, you may be able to witness a rare weather phenomenon called "total cloud
@@ -40,6 +62,7 @@
                     <dt>ROCKY MOUNTAIN NATIONAL PARK</dt>
                     <dd>
                         <img src="assets/rocky-mountain-faq.jpeg" alt="rocky-mountain">
+                        <br>
                         <strong>Location:</strong>Northern Colorado
                         <br>
                         Visitors can drive along the scenic Trail Ridge Road, which has been called the "highway to the
@@ -51,6 +74,7 @@
                     <dt>ZION NATIONAL PARK</dt>
                     <dd>
                         <img src="assets/zion-park-faq.jpeg" alt="zion-park">
+                        <br>
                         <strong>Location:</strong> Southwest Utah
                         <br>
                         Only the adventurous can traverse The Subway in Zion National Park. To get to this tunnel carved
@@ -61,6 +85,7 @@
                     <dt>YELLOWSTONE NATIONAL PARK</dt>
                     <dd>
                         <img src="assets/yellowstone-park-faq.jpeg" alt="yellowstone-park">
+                        <br>
                         <strong>Location:</strong> Northwest Wyoming, Southern Montana, and Eastern Idaho
                         <br>
                         "Bear shows" were a popular tourist activity between 1890 and the 1940s, and the park eventually
@@ -71,6 +96,7 @@
                     <dt>YOSEMITE NATIONAL PARK</dt>
                     <dd>
                         <img src="assets/yosemite-park-faq.jpeg" alt="yosemite-park">
+                        <br>
                         <strong>Location:</strong>Central California
                         <br>
                         A tradition was born where each summer evening at 9 p.m. sharp, someone would shout "Let the
@@ -83,6 +109,7 @@
                     <dt>ACADIA NATIONAL PARK</dt>
                     <dd>
                         <img src="assets/acadia-park-faq.jpeg" alt="acadia-park">
+                        <br>
                         <strong>Location:</strong> Maine's Mount Desert Island
                         <br>
                         If you want to be the first person in America to see the sunrise, visit the top of Acadia's
@@ -94,24 +121,35 @@
                     <dt>GRAND TETON NATIONAL PARK</dt>
                     <dd>
                         <img src="assets/grand-teton-park-faq.jpeg" alt="grand-teton">
+                        <br>
                         <strong>Location:</strong> Northwest Wyoming
                         <br>
-                        They called the three highest mountain peaks,  <em> les trois tétons </em>, which translates to "the three breasts" or "the three teats." It's believed that the trappers were referring specifically to Grand Teton, Teewinot Mountain, and Mt. Owen. At any rate, the name stuck and was later anglicized.
+                        They called the three highest mountain peaks, <em> les trois tétons </em>, which translates to
+                        "the three breasts" or "the three teats." It's believed that the trappers were referring
+                        specifically to Grand Teton, Teewinot Mountain, and Mt. Owen. At any rate, the name stuck and
+                        was later anglicized.
                     </dd>
 
                     <dt>OLYMPIC NATIONAL PARK</dt>
                     <dd>
-                        <img src="" alt="olympic-park">
+                        <img src="assets/olympic-park-faq.jpeg" alt="olympic-park">
+                        <br>
                         <strong>Location:</strong> Washington's Olympic Peninsula
+                        <br>
+                        Temperate rainforests can be found in just a few places around the world, including Chile, New
+                        Zealand, Australia, and America's Pacific Northwest. Thanks to all the moisture coming from the
+                        nearby Pacific Ocean, swathes of Olympic National Park are a lush oasis of mosses, ferns,
+                        lichens, and Sitka spruce.
                     </dd>
 
-                    <dt></dt>
+                    <dt>GLACIER NATIONAL PARK</dt>
                     <dd>
-                        <img src="" alt="">
-                        <strong>Location:</strong>
+                        <img src="assets/glacier-park-faq.jpeg" alt="glacier-park">
+                        <br>
+                        <strong>Location:</strong> Northwest Montana
+                        <br>
+                        Mountain goats are perfectly at home along the rugged terrain of Glacier National Park.
                     </dd>
-
-
                 </dl>
             </div>
         </div>
@@ -130,6 +168,19 @@
                 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
                 crossorigin="anonymous"></script>
         <script>
+            let ddElements = $('dd');
+            let dtElements = $('dt')
+            ddElements.addClass('invisible')
+
+            function toggleVisibility () {
+                ddElements.toggleClass('invisible')
+            }
+            $('h6').click(toggleVisibility);
+
+            function toggleDT () {
+            	$(this).toggleClass('dtHighlight')
+            }
+            dtElements.click(toggleDT)
 
         </script>
     </body>

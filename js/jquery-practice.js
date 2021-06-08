@@ -119,57 +119,85 @@ $('#main-title').click(function () {
 // 	}
 // )
 
-// TODO: When an li with the .list-group-item class is clicked, replace the text with the same text, but uppercased
-//  -> ALSO, change the background of the li to a new color
-//  -> When the li is clicked again, reset the li background color to its original color
-//      -> Don't worry about changing the text back
+// // TODO: When an li with the .list-group-item class is clicked, replace the text with the same text, but uppercased
+// //  -> ALSO, change the background of the li to a new color
+// //  -> When the li is clicked again, reset the li background color to its original color
+// //      -> Don't worry about changing the text back
+//
+// let listGroupItems = $('.list-group-item');
+// console.log(listGroupItems);
+//
+// function doTheThing() {
+// 	if ($(this).css('background-color') === 'rgb(245, 71, 72)') {
+// 		$(this)
+// 			.css({
+// 				backgroundColor: ''
+// 			})
+// 	} else {
+// 		$(this)
+// 			.addClass('text-uppercase')
+// 			.css({
+// 				backgroundColor: '#f54748'
+// 			})
+// 	}
+// }
+//
+// listGroupItems.click(doTheThing);
+//
+// // TODO: Change up the submit button event
+// //  -> Add a new input with an id of #redirect-url
+// //  -> Remove the old click events from #submitBtn
+// //  -> When the user clicks #submitBtn, redirect the page to the value of #redirect-url
+// //  -> HINT: You can either add a new input or change the id of an existing input element to #redirect-url to save time
+//
+// let submitButton = $('#submitBtn');
+//
+// function goToURL() {
+// 	let url = $('#redirect-url').val()
+// 	if (!url.includes('https://'))
+// 		url = 'https://' + url
+// 	location.assign(url);
+// }
+//
+// submitButton.click(goToURL)
+//
+//
+// // TODO: After a 2 second delay (BOM), when the user loads the page, change #main-title to a value of your choosing (change text, background color, what have you)!
+//
+// $(document).ready(
+// 	setTimeout(function () {
+// 		$('#main-title')
+// 			.css({
+// 				backgroundColor: '#f9dfdc',
+// 				fontSize: '4em',
+// 				fontWeight: 'bold'
+// 			})
+// 	}, 2000))
 
-let listGroupItems = $('.list-group-item');
-console.log(listGroupItems);
+// TODO: When the user clicks #submitBtn, log to the console the values of #first, #last, and #handleField
+//  -> If any of the fields are empty, alert the user to fill the empty control (be sure to tell them which control was empty)
 
-function doTheThing() {
-	if ($(this).css('background-color') === 'rgb(245, 71, 72)') {
-		$(this)
-			.css({
-				backgroundColor: ''
-			})
-	} else {
-		$(this)
-			.addClass('text-uppercase')
-			.css({
-				backgroundColor: '#f54748'
-			})
+let submitBtn = $('#submitBtn')
+
+function checkAndLogForm() {
+	let inputObject = {
+		firstName: $('#first').val(),
+		lastName: $('#last').val(),
+		handleField: $('#handleField').val(),
 	}
+	let answerValues = Object.values(inputObject);
+	let answerKeys = Object.keys(inputObject);
+	let allFieldsAnswered = true;
+	
+	answerValues.forEach((element, index) => {
+		if (element === '') {
+			alert(`Need to fill out the missing section, ${answerKeys[index]}`);
+			allFieldsAnswered = false;
+		}
+		if (allFieldsAnswered) {
+			console.log(`${answerKeys[index]}: ${answerValues[index]}`);
+		}
+	})
 }
 
-listGroupItems.click(doTheThing);
-
-// TODO: Change up the submit button event
-//  -> Add a new input with an id of #redirect-url
-//  -> Remove the old click events from #submitBtn
-//  -> When the user clicks #submitBtn, redirect the page to the value of #redirect-url
-//  -> HINT: You can either add a new input or change the id of an existing input element to #redirect-url to save time
-
-let submitButton = $('#submitBtn');
-
-function goToURL() {
-	let url = $('#redirect-url').val()
-	if (!url.includes('https://'))
-		url = 'https://' + url
-	location.assign(url);
-}
-
-submitButton.click(goToURL)
-
-
-// TODO: After a 2 second delay (BOM), when the user loads the page, change #main-title to a value of your choosing (change text, background color, what have you)!
-
-$(document).ready(
-	setTimeout(function () {
-		$('#main-title')
-			.css({
-				backgroundColor: '#f9dfdc',
-				fontSize: '4em',
-				fontWeight: 'bold'
-			})
-	}, 2000))
+submitBtn.click(checkAndLogForm);
