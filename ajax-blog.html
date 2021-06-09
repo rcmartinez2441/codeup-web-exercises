@@ -11,8 +11,10 @@
               crossorigin="anonymous">
     </head>
     <body class="container">
+        <div class="row">
+            <h1 id="h1-tag" class="col-10 border my-1 p-3 text-center m-auto">Ajax Blog</h1>
+        </div>
         <div class="row" id="posts">
-            <div class="col-12 text-center"></div>
         </div>
 
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -20,5 +22,41 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
                 crossorigin="anonymous"></script>
+        <script>
+			(function () {
+				function gatherObjectData() {
+					$.get("data/blog.json").done(function (data) {
+						data.forEach((blogElement, index) => {
+							$('#posts').append(`<div id="forIndex${index}" class="col-10 mx-auto border my-1 blog-containers"></div>`)
+							$(`#forIndex${index}`).append(`
+                                <div class="m-1"><strong>Title:</strong> ${blogElement.title}</div>
+                                <div class="m-1"><strong>Content:</strong><br> ${blogElement.content}</div>
+                                <div class="m-1"><strong>Categories:</strong> ${blogElement.categories}</div>
+                                <div class="m-1"><strong>Date:</strong> ${blogElement.date}</div>
+                            `);
+						})
+						addSomeStyle();
+					})
+				}
+
+				function addSomeStyle() {
+					$('body').css({
+						backgroundColor: '#a8d8ea'
+					});
+
+					$('h1, .blog-containers').css({
+						backgroundColor: '#aa96da',
+						color: 'white',
+					})
+					$('strong').css({
+						textDecoration: 'underline'
+					})
+				}
+
+				gatherObjectData();
+
+
+			})();
+        </script>
     </body>
 </html>
