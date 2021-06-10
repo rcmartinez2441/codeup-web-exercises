@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+              integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+              crossorigin="anonymous">
+        <title>Mapbox Maps</title>
+    </head>
+    <body>
+        <div id="map" style="width: 800px; height: 370px;"></div>
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+                crossorigin="anonymous"></script>
+        <script>
+			const mapboxToken = 'pk.eyJ1IjoicmNtYXJ0aW5lejI0NDEiLCJhIjoiY2twcG44NmFiMm9xNzMycGVjbXVpbWVxYSJ9.Iqz3jC7dpe5lFyuA6iVjdg'
+			mapboxgl.accessToken = mapboxToken;
+			let map = new mapboxgl.Map({
+				container: 'map', // container ID
+				style: 'mapbox://styles/mapbox/dark-v10', // style URL
+				center: [-77.408848, 39.032392], // starting position [lng, lat]
+				zoom: 15 // starting zoom
+			});
+			let marker = setMarker([-77.408848, 39.032392])
+
+			function setMarker(point) {
+				return new mapboxgl
+					.Marker()
+					.setLngLat(point)
+					.addTo(map);
+			}
+
+			function setPopup(name, address = '') {
+				let popup = new mapboxgl.Popup()
+					.setHTML(`<div class="border m-2 text-center">
+                                    <p class="border p-2">${name}</p>
+                                    <p class="p-0">${address}</p>
+                             </div>`)
+					.addTo(map)
+				marker.setPopup(popup); //whenever selPopup is called, it will add the popup to the marker
+			}
+        </script>
+    </body>
+</html>
