@@ -3,6 +3,7 @@
 const mapboxToken = 'pk.eyJ1IjoicmNtYXJ0aW5lejI0NDEiLCJhIjoiY2twcG44NmFiMm9xNzMycGVjbXVpbWVxYSJ9.Iqz3jC7dpe5lFyuA6iVjdg'
 
 mapboxgl.accessToken = mapboxToken;
+
 let map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/dark-v10',
@@ -10,14 +11,14 @@ let map = new mapboxgl.Map({
 	zoom: 10
 })
 
-let marker = setMarker([135.7460400, 35.4957600])
+let marker = setMarker([135.7460400, 35.4957600]);
+setPopup('Obama');
 
 addMapClickEvent(marker);
 
 let geoCoder = setGeocoder();
 addGeocoderToMap(geoCoder);
 addGeocoderEvent(geoCoder);
-setPopup('Obama')
 
 function setGeocoder() {
 	return new MapboxGeocoder({
@@ -41,8 +42,7 @@ function addGeocoderEvent(geocoder) {
 }
 
 function setMarker(point) {
-	return new mapboxgl
-		.Marker()
+	return new mapboxgl.Marker()
 		.setLngLat(point)
 		.addTo(map);
 }
@@ -60,5 +60,10 @@ function setPopup(textDetails) {
 		.setHTML(`<p>${textDetails}</p>`)
 		.addTo(map)
 	marker.setPopup(popup); //whenever selPopup is called, it will add the popup to the marker
+}
+function getReverseGeocode (point, marker ) {
+	$.ajax({
+		url: `ulr.here/${point}/ ${mapboxgl.accessToken}`
+	})
 }
 
