@@ -54,7 +54,6 @@ function addMapClickEvent(markerParam) {
 	})
 }
 
-
 //Creating PopUps
 function setPopup(textDetails) {
 	let popup = new mapboxgl.Popup()

@@ -15,6 +15,7 @@
             .invisible {
                 visibility: hidden;
             }
+
             strong {
                 text-decoration: underline;
             }
@@ -32,14 +33,14 @@
         </style>
     </head>
     <body class="bg-light text-white">
-        <div class="container bg-info">
+        <div class="container-fluid bg-info">
             <div class="row">
                 <h2 class="col-12 mb-4">10 FAQs About National Parks</h2>
                 <h6 class="col-12 mb-2">Click Here to Show Park Facts</h6>
                 <dl class="col-12">
                     <dt>GREAT SMOKY MOUNTAINS NATIONAL PARK</dt>
                     <dd>
-                        <img class='border rounded' src="assets/great-smoky-mountains-faq.jpeg" alt="frog">
+                        <img class="border rounded" src="assets/great-smoky-mountains-faq.jpeg" alt="frog">
                         <br>
                         <strong>Location:</strong> Western North Carolina and Eastern Tennessee
                         <br>
@@ -152,14 +153,51 @@
                     </dd>
                 </dl>
             </div>
-        </div>
-        <footer>
-            <div> FAQ Brought to Us By:</div>
-            <div>
-                <em><a href="https://www.mentalfloss.com/article/582747/facts-about-most-popular-national-parks-america">"10
-                    Fascinating Facts About the 10 Most Popular National Parks in America"</a> by EMILY PETSKO</em>
+            <div class="row">
+                <h2 class="col-12">Four Facts About</h2>
+                <div class="col-12">
+                    <ul>
+                        <h3>Yosemite National Park</h3>
+                        <img src="assets/yosemite-2.jpeg" alt="yosemite-2" height="300px" width="500px" class="mb-1 border rounded">
+                        <li>IT IS REVERED AS THE BIRTH PLACE OF ROCK CLIMBING FOR SPORT</li>
+                        <li>YOSEMITE’S MOST FAMOUS HOTEL WAS USED AS A WARTIME HOSPITAL</li>
+                        <li>DRIVING THROUGH ITS TREES WAS A POPULAR PASTIME.</li>
+                        <li>WHEN THE TIMING IS RIGHT, ONE OF THE PARK’S WATERFALLS GLOWS</li>
+                        <button id='yosemite-button' class="btn border my-1">Click Me!</button>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <h3>Olympic National Park</h3>
+                        <img src="assets/marmot-olympic.jpeg" alt="marmot-olympic" height="300px" width="500px" class="mb-1 border rounded">
+                        <li>ROOSEVELT ELK WERE KEY IN THE PARK’S PRESERVATION.</li>
+                        <li>THE OLYMPIC MARMOT IS ONE OF THE PARK’S FEW ENDEMIC ANIMALS.</li>
+                        <li>ANCIENT DRAWINGS CAN BE FOUND ON A POPULAR BEACH HIKE</li>
+                        <li>ONCE USED FOR HYDROPOWER, THE ELWHA RIVER NOW RUNS WILD</li>
+                        <button id='olympic-button' class="btn border my-1">Click Me!</button>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <h3>Acadia National Park</h3>
+                        <img src="assets/acadia-park.jpeg" alt="" height="300px" width="500px" class="mb-1 border rounded">
+                        <li>Most of the Park Sits on Mount Desert Island. </li>
+                        <li>John D. Rockefeller left his “teeth” on the island </li>
+                        <li>It’s a Great Place to Spot a Bird of Prey</li>
+                        <li>A Fire Gutted the Park In 1947.</li>
+                        <button id='acadia-button' class="btn border my-1">Click Me!</button>
+                    </ul>
+                </div>
             </div>
-        </footer>
+            <footer>
+                <div> FAQ Brought to Us By:</div>
+                <div>
+                    <em><a href="https://www.mentalfloss.com/article/582747/facts-about-most-popular-national-parks-america">"10
+                        Fascinating Facts About the 10 Most Popular National Parks in America"</a> by EMILY PETSKO</em>
+                </div>
+            </footer>
+        </div>
+
         <script src="jquery/jquery-2.2.4.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -168,20 +206,30 @@
                 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
                 crossorigin="anonymous"></script>
         <script>
-            let ddElements = $('dd');
-            let dtElements = $('dt')
-            ddElements.addClass('invisible')
+			let ddElements = $('dd');
+			let dtElements = $('dt')
+			ddElements.addClass('invisible')
 
-            function toggleVisibility () {
-                ddElements.toggleClass('invisible')
-            }
-            $('h6').click(toggleVisibility);
+			function toggleVisibility() {
+				ddElements.toggleClass('invisible')
+			}
 
-            function toggleDT () {
-            	$(this).toggleClass('dtHighlight')
-            }
-            dtElements.click(toggleDT)
+			$('h6').click(toggleVisibility);
 
+			function toggleDT() {
+				$(this).toggleClass('dtHighlight')
+			}
+
+			dtElements.click(toggleDT)
+
+			//****** TRAVERSING EXERCISE ******
+            let ulTags = $('ul')
+            let liTags =  $('li')
+            ulTags.addClass('list-group my-2');
+			liTags.addClass('list-group-item p-2 pl-3 text-uppercase')
+                .css({
+                    backgroundColor:'#dbe2ef'
+                })
         </script>
     </body>
 </html>
