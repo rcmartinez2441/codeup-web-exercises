@@ -154,38 +154,39 @@
                 </dl>
             </div>
             <div class="row">
-                <h2 class="col-12">Four Facts About</h2>
+                <h2 class="col-12">Four Facts About:</h2>
                 <div class="col-12">
+                    <button id="button" class="btn border my-1 col-4" type="button">Click Me!</button>
                     <ul>
                         <h3>Yosemite National Park</h3>
-                        <img src="assets/yosemite-2.jpeg" alt="yosemite-2" height="300px" width="500px" class="mb-1 border rounded">
+                        <img src="assets/yosemite-2.jpeg" alt="yosemite-2" height="300px" width="500px"
+                             class="mb-1 border rounded">
                         <li>IT IS REVERED AS THE BIRTH PLACE OF ROCK CLIMBING FOR SPORT</li>
                         <li>YOSEMITE’S MOST FAMOUS HOTEL WAS USED AS A WARTIME HOSPITAL</li>
                         <li>DRIVING THROUGH ITS TREES WAS A POPULAR PASTIME.</li>
                         <li>WHEN THE TIMING IS RIGHT, ONE OF THE PARK’S WATERFALLS GLOWS</li>
-                        <button id='yosemite-button' class="btn border my-1">Click Me!</button>
                     </ul>
                 </div>
                 <div class="col-12">
                     <ul>
                         <h3>Olympic National Park</h3>
-                        <img src="assets/marmot-olympic.jpeg" alt="marmot-olympic" height="300px" width="500px" class="mb-1 border rounded">
+                        <img src="assets/marmot-olympic.jpeg" alt="marmot-olympic" height="300px" width="500px"
+                             class="mb-1 border rounded">
                         <li>ROOSEVELT ELK WERE KEY IN THE PARK’S PRESERVATION.</li>
                         <li>THE OLYMPIC MARMOT IS ONE OF THE PARK’S FEW ENDEMIC ANIMALS.</li>
                         <li>ANCIENT DRAWINGS CAN BE FOUND ON A POPULAR BEACH HIKE</li>
                         <li>ONCE USED FOR HYDROPOWER, THE ELWHA RIVER NOW RUNS WILD</li>
-                        <button id='olympic-button' class="btn border my-1">Click Me!</button>
                     </ul>
                 </div>
                 <div class="col-12">
                     <ul>
                         <h3>Acadia National Park</h3>
-                        <img src="assets/acadia-park.jpeg" alt="" height="300px" width="500px" class="mb-1 border rounded">
-                        <li>Most of the Park Sits on Mount Desert Island. </li>
-                        <li>John D. Rockefeller left his “teeth” on the island </li>
+                        <img src="assets/acadia-park.jpeg" alt="" height="300px" width="500px"
+                             class="mb-1 border rounded">
+                        <li>Most of the Park Sits on Mount Desert Island.</li>
+                        <li>John D. Rockefeller left his “teeth” on the island</li>
                         <li>It’s a Great Place to Spot a Bird of Prey</li>
                         <li>A Fire Gutted the Park In 1947.</li>
-                        <button id='acadia-button' class="btn border my-1">Click Me!</button>
                     </ul>
                 </div>
             </div>
@@ -223,13 +224,39 @@
 			dtElements.click(toggleDT)
 
 			//****** TRAVERSING EXERCISE ******
-            let ulTags = $('ul')
-            let liTags =  $('li')
-            ulTags.addClass('list-group my-2');
+			let ulTags = $('ul')
+			let liTags = $('li')
+
+			ulTags.addClass('list-group my-2');
 			liTags.addClass('list-group-item p-2 pl-3 text-uppercase')
-                .css({
-                    backgroundColor:'#dbe2ef'
-                })
+				.css({
+					backgroundColor: '#ff96ad'
+				})
+			$('button').click(function () {
+				let ulList = $('ul');
+				ulList.each(function () {
+					$(this).children('li').last()
+						.css({
+							backgroundColor: 'yellow'
+						})
+				});
+			});
+
+			$('h3').click(function () {
+				let liList = $(this)
+					.parent()
+					.children('li');
+				liList.css({
+					fontWeight: 'bolder'
+				})
+			});
+
+			liTags.click(function () {
+				$(this).parent().children('li').first()
+					.css({
+						color: 'blue'
+					})
+			})
         </script>
     </body>
 </html>
