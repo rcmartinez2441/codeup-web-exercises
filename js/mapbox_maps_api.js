@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	const mapboxToken = 'pk.eyJ1IjoicmNtYXJ0aW5lejI0NDEiLCJhIjoiY2twcG44NmFiMm9xNzMycGVjbXVpbWVxYSJ9.Iqz3jC7dpe5lFyuA6iVjdg'
+	const mapboxToken = MAPBOX_TOKEN
 
 	mapboxgl.accessToken = mapboxToken;
 
@@ -36,6 +36,9 @@
 	//*** WONT SHOW UP UNLESS YOU HAVE SCRIPT AND LINK TAGS FOR GEOCODE ***
 	addGeocoderToMap(geoCoder);
 
+	//Creates Geocode Event for Result
+	addGeocoderEvent(geoCoder);
+
 
 	function createMapbox(center, zoom) {
 		return new mapboxgl.Map({
@@ -55,8 +58,14 @@
 
 	function setMyPopup(placeInfo, specificMarker) {
 		let popup = new mapboxgl.Popup()
-			.setHTML(`<p>${placeInfo.place_name}</p>
-					<p>${placeInfo.address}</p>`
+			.setHTML(`
+				<div class="container text-white bg-warning mt-1">
+            		<div class="row p-1">
+                		<img class="col-12 mb-1" src="assets/dj-khaled.gif" alt="location-img-1">
+                		<div class="col-12 border rounded mb-1 bg-info">${placeInfo.place_name}</div>
+                		<div class="col-12 border rounded bg-info">${placeInfo.address}</div>
+            		</div>
+        		</div>`
 			)
 		specificMarker.setPopup(popup);
 	}
@@ -73,12 +82,28 @@
 		map.addControl(theGeoCodeVar);
 	}
 
-	function addAllLocations (array) {
-		map = createMapbox(customCenter, 3)
+	function addGeocoderEvent(geocodeEntry) {
+		geocodeEntry.on('result', function (data) {
+			console.log(data);
+			let newMarker = setMyMarker(data.result.geometry.coordinates)
+			let placeInfo = {
+				coordinates: data.result.geometry.coordinates,
+				place_name: data.result.place_name,
+				address: ``,
+			}
+			myFavRestaurants.push(placeInfo);
+			console.log(myFavRestaurants);
+			setMyPopup(placeInfo, newMarker)
+		})
+	}
+
+	function addAllLocations(array) {
+		map = createMapbox([-96.283496, 37.230328], 3.5)
 		array.forEach((objectElement) => {
 			let marker2 = setMyMarker(objectElement.coordinates);
 			setMyPopup(objectElement, marker2);
 		})
 	}
+
 	addAllLocations(myFavRestaurants);
 })()
