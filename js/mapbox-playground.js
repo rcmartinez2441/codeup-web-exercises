@@ -31,7 +31,6 @@ function setGeocoder() {
 function addGeocoderToMap(geocoder) {
 	map.addControl(geocoder);
 }
-
 //Adds even listener to geocoder when you select an option when you search
 function addGeocoderEvent(geocoder) {
 	geocoder.on('result', function (event) {
@@ -41,7 +40,7 @@ function addGeocoderEvent(geocoder) {
 	})
 }
 
-function setMarker(point) {
+function setMarker(point){
 	return new mapboxgl.Marker()
 		.setLngLat(point)
 		.addTo(map);
@@ -61,9 +60,14 @@ function setPopup(textDetails) {
 		.addTo(map)
 	marker.setPopup(popup); //whenever selPopup is called, it will add the popup to the marker
 }
-function getReverseGeocode (point, marker ) {
+function getReverseGeocode (point) {
 	$.ajax({
-		url: `ulr.here/${point}/ ${mapboxgl.accessToken}`
-	})
+			url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${point[0]},${point[1]}.json?access_token=${mapboxgl.accessToken}`,
+			success: function (data) {
+				marker.setPopup(getPopup(data.features[0].place_name)); // This will only execute once the success callback is invoked
+				// It guarantees that the response is returned AND successful before trying to do anything with the expected data
+			}
+		}
+	);
 }
 
