@@ -3,11 +3,16 @@ function fetchLastCommit() {
 	console.log(username);
 	fetch(`https://api.github.com/users/${username}/events/public`, {
 		headers: {
-			'Authorization': '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'
+			'Authorization': GITHUB_ACCESS_TOKEN
 		}
 	})
-		.then(response => {
-			console.log(response.json())
+		.then(response => response.json())
+		.then(data => {
+			console.log(data);
+			let commitTime = data[0].created_at;
+			let commitContainer = $('#last-commit-container')
+			commitContainer.html('')
+			commitContainer.html(`Your Last Commit was on: ${commitTime}`)
 		})
 		.catch(error => {
 			console.log(error)
